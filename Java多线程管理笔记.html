@@ -1,0 +1,886 @@
+<!DOCTYPE html><html><head>
+      <title>Java&#x591A;&#x7EBF;&#x7A0B;&#x7BA1;&#x7406;&#x7B14;&#x8BB0;</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\William\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.4.3\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="executors">Executors</h1>
+
+<p><strong>Executors</strong>&#x76F8;&#x5F53;&#x4E8E;ExecutorService&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x5305;&#x542B;&#x5404;&#x79CD;&#x5E38;&#x7528;&#x6267;&#x884C;&#x5668;&#x7684;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x5E38;&#x7528;&#x7684;&#x6267;&#x884C;&#x5668;&#x3002;&#x51E0;&#x79CD;&#x5E38;&#x7528;&#x7684;&#x6267;&#x884C;&#x5668;&#x5982;&#x4E0B;&#xFF1A;<br>
+<code>Executors.newCachedThreadPool()</code>,&#x6839;&#x636E;&#x9700;&#x8981;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x65B0;&#x7EBF;&#x7A0B;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x3002;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x66FE;&#x7ECF;&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x5728;&#x5B8C;&#x6210;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x540E;&#x4E5F;&#x8BB8;&#x4F1A;&#x88AB;&#x7528;&#x6765;&#x5B8C;&#x6210;&#x53E6;&#x5916;&#x4E00;&#x9879;&#x4EFB;&#x52A1;&#x3002;<br>
+<code>Executors.newFixedThreadPool(int nThreads)</code> ,&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EF;&#x91CD;&#x7528;&#x56FA;&#x5B9A;&#x7EBF;&#x7A0B;&#x6570;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x3002;&#x8FD9;&#x4E2A;&#x7EBF;&#x7A0B;&#x6C60;&#x91CC;&#x6700;&#x591A;&#x5305;&#x542B;nThread&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;<br>
+<code>Executors.newSingleThreadExecutor()</code> ,&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x5355;&#x4E2A; worker &#x7EBF;&#x7A0B;&#x7684; Executor&#x3002;&#x5373;&#x4F7F;&#x4EFB;&#x52A1;&#x518D;&#x591A;&#xFF0C;&#x4E5F;&#x53EA;&#x7528;1&#x4E2A;&#x7EBF;&#x7A0B;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x3002;<br>
+<code>Executors.newSingleThreadScheduledExecutor()</code> ,&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5355;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x53EF;&#x5B89;&#x6392;&#x5728;<u>&#x7ED9;&#x5B9A;&#x5EF6;&#x8FDF;&#x540E;</u>&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x6216;&#x8005;<u>&#x5B9A;&#x671F;</u>&#x6267;&#x884C;&#x3002;</p>
+<p><strong>1. &#x53EF;&#x7F13;&#x5B58;&#x7EBF;&#x7A0B;&#x6C60;(CachedThreadPool)</strong><br>
+&#x521B;&#x5EFA;&#x7684;&#x90FD;&#x662F;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;&#x4E14;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x4E3A;Integer&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#x662F;1&#x5206;&#x949F;&#x3002;&#x5982;&#x679C;&#x6709;&#x5927;&#x91CF;&#x8017;&#x65F6;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5219;&#x4E0D;&#x9002;&#x8BE5;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#x3002;&#x5B83;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x751F;&#x547D;&#x5468;&#x671F;&#x77ED;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">ExecutorService</span> exec <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newCachedThreadPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//5&#x4E2A;&#x4EFB;&#x52A1;</span>
+    exec<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot; doing task&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+exec<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x5173;&#x95ED;&#x7EBF;&#x7A0B;&#x6C60;</span>
+</pre><p>&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>pool-1-thread-2 doing task
+pool-1-thread-1 doing task
+pool-1-thread-3 doing task
+pool-1-thread-4 doing task
+pool-1-thread-5 doing task
+</code></pre><p><strong>2. &#x5355;&#x7EBF;&#x7A0B;&#x6C60;(SingleThreadExecutor)</strong><br>
+&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">ExecutorService</span> exec <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newSingleThreadExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    exec<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//execute&#x65B9;&#x6CD5;&#x63A5;&#x6536;Runnable&#x5BF9;&#x8C61;&#xFF0C;&#x65E0;&#x8FD4;&#x56DE;&#x503C;</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+exec<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>pool-1-thread-1
+pool-1-thread-1
+pool-1-thread-1
+pool-1-thread-1
+pool-1-thread-1
+</code></pre><p><strong>3. &#x56FA;&#x5B9A;&#x7EBF;&#x7A0B;&#x6570;&#x7EBF;&#x7A0B;&#x6C60;</strong><br>
+&#x7C7B;&#x4F3C;&#x4E8E;&#x5355;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x7528;&#x6CD5;&#xFF0C;&#x5982;nThreads=3&#x65F6;&#xFF0C;<code>Executors.newFixedThreadPool(3);</code></p>
+<p><strong>4. &#x56FA;&#x5B9A;&#x7EBF;&#x7A0B;&#x6570;&#xFF0C;&#x652F;&#x6301;&#x5B9A;&#x65F6;&#x548C;&#x5468;&#x671F;&#x6027;&#x4EFB;&#x52A1;</strong></p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">ExecutorService</span> scheduledPool <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newScheduledThreadPool</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x53EF;&#x7528;&#x4E8E;&#x66FF;&#x4EE3;handler.postDelay&#x548C;Timer&#x5B9A;&#x65F6;&#x5668;&#x7B49;&#x5EF6;&#x65F6;&#x548C;&#x5468;&#x671F;&#x6027;&#x4EFB;&#x52A1;&#x3002;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token class-name">ScheduledFuture</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> <span class="token function">schedule</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> command<span class="token punctuation">,</span> <span class="token keyword">long</span> delay<span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span> unit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token class-name">ScheduledFuture</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> <span class="token function">scheduleAtFixedRate</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> command<span class="token punctuation">,</span> <span class="token keyword">long</span> initialDelay<span class="token punctuation">,</span> <span class="token keyword">long</span> period<span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span> unit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token class-name">ScheduledFuture</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> <span class="token function">scheduleWithFixedDelay</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> command<span class="token punctuation">,</span> <span class="token keyword">long</span> initialDelay<span class="token punctuation">,</span> <span class="token keyword">long</span> delay<span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span> unit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><blockquote>
+<p><strong>scheduleAtFixedRate</strong>&#x548C;<strong>sheduleWithFixedDelay</strong>&#x7684;&#x4E0D;&#x540C;<br>
+scheduleAtFixedRate&#xFF1A;&#x521B;&#x5EFA;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x5728;&#x7ED9;&#x5B9A;&#x521D;&#x59CB;&#x5EF6;&#x8FDF;&#x540E;&#x7684;&#x5B9A;&#x671F;&#x64CD;&#x4F5C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x5728;&#xA0;initialDelay&#xA0;&#x540E;&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x5728;initialDelay+period&#xA0;&#x540E;&#x4E0B;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#xFF0C;&#x63A5;&#x7740;&#x5728;&#xA0;initialDelay+2*period&#xA0;&#x540E;&#x6267;&#x884C;&#xFF0C;&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x65F6;&#x6709;&#x5EF6;&#x65F6;&#x3002;<br>
+sheduleWithFixedDelay&#xFF1A;&#x521B;&#x5EFA;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x5728;&#x7ED9;&#x5B9A;&#x521D;&#x59CB;&#x5EF6;&#x8FDF;&#x540E;&#x9996;&#x6B21;&#x542F;&#x7528;&#x7684;&#x5B9A;&#x671F;&#x64CD;&#x4F5C;&#xFF0C;&#x968F;&#x540E;&#xFF0C;&#x5728;&#x6BCF;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x7EC8;&#x6B62;&#x548C;&#x4E0B;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x5F00;&#x59CB;&#x4E4B;&#x95F4;&#x90FD;&#x5B58;&#x5728;&#x7ED9;&#x5B9A;&#x7684;&#x5EF6;&#x8FDF;&#xFF0C;&#x5373;&#x603B;&#x65F6;&#x95F4;&#x662F;(initialDelay+period)*n</p>
+</blockquote>
+<p>&#x5E2E;&#x52A9;&#x7C7B;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">LgExecutorService</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">ConcurrentHashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Future</span><span class="token punctuation">&gt;</span></span> futureMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ConcurrentHashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">ScheduledExecutorService</span> executorService <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ScheduledThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">LgExecutorService</span> INSTANCE <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LgExecutorService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">LgExecutorService</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">LgExecutorService</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">ConcurrentHashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Future</span><span class="token punctuation">&gt;</span></span> <span class="token function">getFutureMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> futureMap<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> runnable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>runnable <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            executorService<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>runnable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * @param runnable
+     * @param delay    &#x5EF6;&#x8FDF;&#x65F6;&#x95F4;
+     * @param timeUnit &#x65F6;&#x95F4;&#x5355;&#x4F4D;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sheduler</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> runnable<span class="token punctuation">,</span> <span class="token keyword">long</span> delay<span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span> timeUnit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>runnable <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            executorService<span class="token punctuation">.</span><span class="token function">schedule</span><span class="token punctuation">(</span>runnable<span class="token punctuation">,</span> delay<span class="token punctuation">,</span> timeUnit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x6267;&#x884C;&#x5EF6;&#x65F6;&#x5468;&#x671F;&#x6027;&#x4EFB;&#x52A1;
+     *
+     * @param runnable {@code LgExecutorSercice.JobRunnable}
+     * @param initialDelay &#x5EF6;&#x8FDF;&#x65F6;&#x95F4;
+     * @param period       &#x5468;&#x671F;&#x65F6;&#x95F4;
+     * @param timeUnit     &#x65F6;&#x95F4;&#x5355;&#x4F4D;
+     */</span>
+    <span class="token keyword">public</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span> <span class="token keyword">extends</span> <span class="token class-name">JobRunnable</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">void</span> <span class="token function">sheduler</span><span class="token punctuation">(</span><span class="token class-name">T</span> runnable<span class="token punctuation">,</span> <span class="token keyword">long</span> initialDelay<span class="token punctuation">,</span> <span class="token keyword">long</span> period<span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span> timeUnit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>runnable <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> future <span class="token operator">=</span> executorService<span class="token punctuation">.</span><span class="token function">scheduleAtFixedRate</span><span class="token punctuation">(</span>runnable<span class="token punctuation">,</span> initialDelay<span class="token punctuation">,</span> period<span class="token punctuation">,</span> timeUnit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            futureMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>runnable<span class="token punctuation">.</span><span class="token function">getJobId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> future<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">JobRunnable</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">private</span> <span class="token class-name">String</span> jobId<span class="token punctuation">;</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">JobRunnable</span><span class="token punctuation">(</span><span class="token class-name">String</span> jobId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>jobId <span class="token operator">=</span> jobId<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">/**
+         * &#x5F3A;&#x5236;&#x7EC8;&#x6B62;&#x5B9A;&#x65F6;&#x7EBF;&#x7A0B;
+         */</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">terminal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword">var</span> future <span class="token operator">=</span> <span class="token class-name">LgExecutorService</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFutureMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>jobId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                future<span class="token punctuation">.</span><span class="token function">cancel</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;jobId &quot;</span> <span class="token operator">+</span> jobId <span class="token operator">+</span> <span class="token string">&quot; had cancel&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getJobId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> jobId<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><p><strong>5. &#x624B;&#x52A8;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x6C60;</strong></p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">private</span> <span class="token class-name">ExecutorService</span> pool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10L</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">LinkedBlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Runnable</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">defaultThreadFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">.</span><span class="token class-name">AbortPolicy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h1 class="mume-header" id="executorinterface">Executor(interface)</h1>
+
+<p>&#x53EA;&#x6709;<code>void execute(Runnable command)</code>&#x65B9;&#x6CD5;&#x3002;&#x91CC;&#x9762;&#x5177;&#x4F53;&#x600E;&#x4E48;&#x6267;&#x884C;&#xFF0C;&#x662F;&#x5426;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7531;&#x76F8;&#x5E94;&#x7684;Executor&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#x51B3;&#x5B9A;&#x3002;Executor&#x5C06;&#x4EFB;&#x52A1;&#x63D0;&#x4EA4;&#x4E0E;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x5982;&#x4F55;&#x8FD0;&#x884C;&#xFF08;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x3001;&#x8C03;&#x5EA6;&#xFF09;&#x76F8;&#x5206;&#x79BB;&#x3002;</p>
+<h1 class="mume-header" id="executorserviceinterface">ExecutorService(interface)</h1>
+
+<p>&#x8BE5;&#x63A5;&#x53E3;&#x7EE7;&#x627F;&#x81EA;Executor&#x63A5;&#x53E3;</p>
+<ul>
+<li>&#x7528;&#x4E8E;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x7684;submit&#x65B9;&#x6CD5;&#x6709;&#x4E24;&#x79CD;</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> <span class="token function">submit</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> task<span class="token punctuation">)</span> 
+<span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">submit</span><span class="token punctuation">(</span><span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> task<span class="token punctuation">)</span>
+</pre><p>&#x533A;&#x522B;&#xFF1A;&#x4E00;&#x4E2A;&#x63A5;&#x6536;Runnable&#x7C7B;&#x578B;&#x5165;&#x53C2;&#xFF0C;&#x4E00;&#x4E2A;&#x63A5;&#x6536;Callable&#x7C7B;&#x578B;&#x5165;&#x53C2;&#x3002;Callable&#x5165;&#x53C2;&#x5141;&#x8BB8;&#x4EFB;&#x52A1;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x800C;Runnable&#x65E0;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<ul>
+<li><strong>&#x6279;&#x91CF;&#x6267;&#x884C;</strong>&#x4EFB;&#x52A1;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Future</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> <span class="token function">invokeAll</span><span class="token punctuation">(</span><span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Callable</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> tasks<span class="token punctuation">)</span>
+<span class="token class-name">T</span> <span class="token function">invokeAny</span><span class="token punctuation">(</span><span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Callable</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> tasks<span class="token punctuation">)</span>
+</pre><p>&#x533A;&#x522B;&#xFF1A;invokeAll&#x662F;&#x7B49;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x8FD4;&#x56DE;&#x4EE3;&#x8868;&#x7ED3;&#x679C;&#x7684;Future&#x5217;&#x8868;&#x3002;&#x800C;invokeAny&#x662F;&#x7B49;&#x8FD9;&#x4E00;&#x6279;&#x4EFB;&#x52A1;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5C31;&#x8FD4;&#x56DE;&#x3002;</p>
+<ul>
+<li><code>void shutdown()</code>&#xFF1A;&#x542F;&#x52A8;&#x4E00;&#x6B21;&#x987A;&#x5E8F;&#x5173;&#x95ED;&#xFF0C;&#x6267;&#x884C;&#x4EE5;&#x524D;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4F46;&#x4E0D;&#x63A5;&#x53D7;&#x65B0;&#x4EFB;&#x52A1;&#x3002;&#x6267;&#x884C;&#x6B64;&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x7ED3;&#x675F;&#x540E;&#x5C31;&#x5173;&#x95ED;&#xFF0C;&#x540C;&#x65F6;&#x4E0D;&#x518D;&#x63A5;&#x6536;&#x65B0;&#x7684;&#x4EFB;&#x52A1;&#x3002;<br>
+<u>&#x539F;&#x5219;</u>&#xFF1A;&#x53EA;&#x8981;ExecutorService(&#x7EBF;&#x7A0B;&#x6C60;)&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#xFF0C;&#x5C31;&#x5E94;&#x8BE5;&#x5173;&#x95ED;&#xFF0C;&#x4EE5;&#x56DE;&#x6536;&#x8D44;&#x6E90;&#x3002;</li>
+</ul>
+<h1 class="mume-header" id="callableinterface">Callable(interface)</h1>
+
+<p>Callable&#x4EE3;&#x8868;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">class</span> <span class="token class-name">CalcTask</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">ExecutorService</span> exec <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newCachedThreadPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Callable</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> taskList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Callable</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/* &#x5F80;&#x4EFB;&#x52A1;&#x5217;&#x8868;&#x4E2D;&#x6DFB;&#x52A0;5&#x4E2A;&#x4EFB;&#x52A1; */</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    taskList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">CalcTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* &#x7ED3;&#x679C;&#x5217;&#x8868;:&#x5B58;&#x653E;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x8FD4;&#x56DE;&#x7684;&#x503C; */</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Future</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> resultList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Future</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">/*invokeAll&#x6279;&#x91CF;&#x8FD0;&#x884C;&#x6240;&#x6709;&#x4EFB;&#x52A1;, submit&#x63D0;&#x4EA4;&#x5355;&#x4E2A;&#x4EFB;&#x52A1;*/</span>
+    resultList <span class="token operator">=</span> exec<span class="token punctuation">.</span><span class="token function">invokeAll</span><span class="token punctuation">(</span>taskList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">/*&#x4ECE;future&#x4E2D;&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x8FD4;&#x56DE;&#x503C;*/</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> future <span class="token operator">:</span> resultList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>future<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//get&#x65B9;&#x6CD5;&#x4F1A;&#x963B;&#x585E;&#x76F4;&#x5230;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ExecutionException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h1 class="mume-header" id="futureinterface">Future(interface)</h1>
+
+<p><code>get()</code>&#xFF1A;&#x83B7;&#x53D6;&#x5176;&#x7ED3;&#x679C;<br>
+<code>isDone()</code>&#xFF1A;&#x7528;&#x6765;&#x67E5;&#x8BE2;&#x4EFB;&#x52A1;&#x662F;&#x5426;&#x505A;&#x5B8C;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token comment">/*&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Callable&#x4EFB;&#x52A1;*/</span>
+<span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> callableTask <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Calculating!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x4F11;&#x7720;2&#x79D2;</span>
+        <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span> 
+<span class="token class-name">ExecutorService</span> executor <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newCachedThreadPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> result <span class="token operator">=</span> executor<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span>callableTask<span class="token punctuation">)</span><span class="token punctuation">;</span>
+executor<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>result<span class="token punctuation">.</span><span class="token function">isDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//isDone()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x5B50;&#x7EBF;&#x7A0B;&#x662F;&#x5426;&#x505A;&#x5B8C;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5B50;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x6267;&#x884C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x4F11;&#x7720;1&#x79D2;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5B50;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7ED3;&#x679C;:&quot;</span><span class="token operator">+</span>result<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> <span class="token operator">|</span> <span class="token class-name">ExecutionException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h1 class="mume-header" id="futuretask">FutureTask</h1>
+
+<p>FutureTask&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;Runnable&#x63A5;&#x53E3;&#x548C;Future&#x63A5;&#x53E3;&#xFF0C;&#x6240;&#x4EE5;FutureTask&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;Runnable&#x88AB;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;Future&#x5F97;&#x5230;&#x4F20;&#x5165;&#x7684;Callable&#x5BF9;&#x8C61;&#x7684;&#x8FD4;&#x56DE;&#x503C;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">FutureTask</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> futureTask <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FutureTask</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token annotation punctuation">@Override</span>
+   <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;futureTask is wokring 1+1!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Thread</span> t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>futureTask<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//1.&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;Runnable&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x4F7F;&#x7528;</span>
+t1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+   <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>futureTask<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//2.&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;Future&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x5F97;&#x5230;&#x7EBF;&#x7A0B;&#x8FD0;&#x7B97;&#x8FD4;&#x56DE;&#x503C;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ExecutionException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h1 class="mume-header" id="semaphore">Semaphore</h1>
+
+<p><code>public Semaphore(int permits,boolean fair)</code><br>
+&#x2003;permits:&#x521D;&#x59CB;&#x5316;&#x53EF;&#x7528;&#x7684;&#x8BB8;&#x53EF;&#x6570;&#x76EE;<br>
+&#x2003;fair: &#x82E5;&#x8BE5;&#x4FE1;&#x53F7;&#x91CF;&#x4FDD;&#x8BC1;&#x5728;&#x5F81;&#x7528;&#x65F6;&#x6309;FIFO&#x7684;&#x987A;&#x5E8F;&#x6388;&#x4E88;&#x8BB8;&#x53EF;&#xFF0C;&#x5219;&#x4E3A;true&#xFF0C;&#x5426;&#x5219;&#x4E3A;false</p>
+<blockquote>
+<p><code>void acquireUninterruptibly(int permits)</code>&#xFF1A;&#x4ECE;&#x4FE1;&#x53F7;&#x91CF;&#x4E2D;&#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x8BB8;&#x53EF;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x83B7;&#x5F97;&#x8BB8;&#x53EF;&#x4E4B;&#x524D;&#xFF0C;&#x4E00;&#x76F4;&#x5C06;&#x7EBF;&#x7A0B;&#x963B;&#x585E;<br>
+<code>void release()</code>&#xFF1A;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x8BB8;&#x53EF;/&#x91CA;&#x653E;&#x4E00;&#x4E2A;&#x8BB8;&#x53EF;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x8FD4;&#x56DE;&#x7ED9;&#x4FE1;&#x53F7;&#x91CF;&#x3002;&#x4ECE;&#x800C;&#x53EF;&#x80FD;&#x91CA;&#x653E;&#x4E00;&#x4E2A;&#x6B63;&#x5728;&#x963B;&#x585E;&#x7684;&#x83B7;&#x53D6;&#x8005;&#x3002;<br>
+<code>void acquire()</code>&#xFF1A;&#x4ECE;&#x4FE1;&#x53F7;&#x91CF;&#x83B7;&#x5F97;&#x8BB8;&#x53EF;</p>
+</blockquote>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token comment">/**
+ * &#x7EBF;&#x7A0B;&#x4FE1;&#x53F7;&#x91CF;Semaphore&#x7684;&#x8FD0;&#x7528;
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SemaphoreThreadTest</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> threadId <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * &#x94F6;&#x884C;&#x5B58;&#x94B1;&#x7C7B;
+     */</span>
+    <span class="token keyword">class</span> <span class="token class-name">Bank</span> <span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token keyword">int</span> account <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAccount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> account<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token keyword">int</span> money<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            account <span class="token operator">+=</span> money<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7C7B;&#xFF0C;&#x6BCF;&#x6B21;&#x5B58;10&#x5757;&#x94B1;
+     */</span>
+    <span class="token keyword">class</span> <span class="token class-name">SaveMoneyTask</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token class-name">Bank</span> bank<span class="token punctuation">;</span>
+        <span class="token keyword">private</span> <span class="token class-name">Semaphore</span> semaphore<span class="token punctuation">;</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">SaveMoneyTask</span><span class="token punctuation">(</span><span class="token class-name">Bank</span> bank<span class="token punctuation">,</span> <span class="token class-name">Semaphore</span> semaphore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>bank <span class="token operator">=</span> bank<span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>semaphore <span class="token operator">=</span> semaphore<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> threadId <span class="token operator">=</span> <span class="token class-name">SemaphoreThreadTest</span><span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">.</span>threadId<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>semaphore<span class="token punctuation">.</span><span class="token function">availablePermits</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7EBF;&#x7A0B;&quot;</span> <span class="token operator">+</span> threadId <span class="token operator">+</span> <span class="token string">&quot;&#x542F;&#x52A8;&#xFF0C;&#x8FDB;&#x5165;&#x94F6;&#x884C;,&#x6709;&#x4F4D;&#x7F6E;&#x7ACB;&#x5373;&#x53BB;&#x5B58;&#x94B1;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7EBF;&#x7A0B;&quot;</span> <span class="token operator">+</span> threadId <span class="token operator">+</span> <span class="token string">&quot;&#x542F;&#x52A8;&#xFF0C;&#x8FDB;&#x5165;&#x94F6;&#x884C;,&#x65E0;&#x4F4D;&#x7F6E;&#xFF0C;&#x53BB;&#x6392;&#x961F;&#x7B49;&#x5F85;&#x7B49;&#x5F85;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                semaphore<span class="token punctuation">.</span><span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                bank<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>threadId <span class="token operator">+</span> <span class="token string">&quot;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x4E3A;&#xFF1A;&quot;</span> <span class="token operator">+</span> bank<span class="token punctuation">.</span><span class="token function">getAccount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7EBF;&#x7A0B;&quot;</span> <span class="token operator">+</span> threadId <span class="token operator">+</span> <span class="token string">&quot;&#x5B58;&#x94B1;&#x5B8C;&#x6BD5;&#xFF0C;&#x79BB;&#x5F00;&#x94F6;&#x884C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                semaphore<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x5EFA;&#x7ACB;&#x7EBF;&#x7A0B;&#xFF0C;&#x8C03;&#x7528;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x5F00;&#x59CB;&#x5B58;&#x94B1;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Bank</span> bank <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bank</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x5B9A;&#x4E49;2&#x4E2A;&#x4FE1;&#x53F7;&#x91CF;</span>
+        <span class="token class-name">Semaphore</span> semaphore <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Semaphore</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7EBF;&#x7A0B;&#x6C60;</span>
+        <span class="token class-name">ExecutorService</span> executorService <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newCachedThreadPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x5EFA;&#x7ACB;10&#x4E2A;&#x7EBF;&#x7A0B;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// &#x6267;&#x884C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;</span>
+            executorService<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">SaveMoneyTask</span><span class="token punctuation">(</span>bank<span class="token punctuation">,</span> semaphore<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// &#x5173;&#x95ED;&#x7EBF;&#x7A0B;&#x6C60;</span>
+        executorService<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x4ECE;&#x4FE1;&#x53F7;&#x91CF;&#x4E2D;&#x83B7;&#x53D6;&#x4E24;&#x4E2A;&#x8BB8;&#x53EF;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x83B7;&#x5F97;&#x8BB8;&#x53EF;&#x4E4B;&#x524D;&#xFF0C;&#x4E00;&#x76F4;&#x5C06;&#x7EBF;&#x7A0B;&#x963B;&#x585E;</span>
+        semaphore<span class="token punctuation">.</span><span class="token function">acquireUninterruptibly</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5230;&#x996D;&#x70B9;&#x4E86;&#xFF0C;&#x7A97;&#x53E3;&#x7F29;&#x51CF;&#x4E3A;2&#x4E2A;&#x3002;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x91CA;&#x653E;&#x4E24;&#x4E2A;&#x8BB8;&#x53EF;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x8FD4;&#x56DE;&#x7ED9;&#x4FE1;&#x53F7;&#x91CF;</span>
+        semaphore<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SemaphoreThreadTest</span> test <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SemaphoreThreadTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        test<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h1 class="mume-header" id="lock">Lock</h1>
+
+<p><code>Lock lock = new ReentrantLock();</code></p>
+<h1 class="mume-header" id="condition">Condition</h1>
+
+<p>&#x63A5;&#x53E3;&#x5185;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li><code>lock.newCondition()</code> &#x6784;&#x5EFA;&#x65B0;Condition<br>
+<code>Condition</code>&#x4F9D;&#x8D56;&#x4E8E;<code>Lock</code>&#x63A5;&#x53E3;&#xFF0C;lock&#x662F;Lock&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x8C03;&#x7528;<code>Condition</code>&#x7684;<code>await()</code>&#x548C;<code>signal()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x90FD;&#x5FC5;&#x987B;&#x5728;<code>lock</code>&#x4FDD;&#x62A4;&#x4E4B;&#x5185;&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#x5FC5;&#x987B;&#x5728;<code>lock.lock()</code>&#x548C;<code>lock.unlock</code>&#x4E4B;&#x95F4;&#x624D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF01;</li>
+<li><code>await()</code><br>
+Conditon&#x4E2D;&#x7684;await()&#x5BF9;&#x5E94;Object&#x7684;wait()</li>
+<li><code>signal()</code><br>
+Condition&#x4E2D;&#x7684;signal()&#x5BF9;&#x5E94;Object&#x7684;notify()</li>
+<li><code>signalAll()</code><br>
+Condition&#x4E2D;&#x7684;signalAll()&#x5BF9;&#x5E94;Object&#x7684;notifyAll()</li>
+</ol>
+<p>&#x4F7F;&#x7528;synchronized/wait()&#x5B9E;&#x73B0;&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Date</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">LinkedList</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x6A21;&#x62DF;&#x751F;&#x4EA7;&#x548C;&#x6D88;&#x8D39;&#x7684;&#x5BF9;&#x8C61;</span>
+<span class="token keyword">class</span> <span class="token class-name">Buffer</span> <span class="token punctuation">{</span>
+	<span class="token keyword">private</span> <span class="token keyword">int</span> maxSize<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Date</span><span class="token punctuation">&gt;</span></span> storage<span class="token punctuation">;</span>
+
+	<span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		maxSize <span class="token operator">=</span> size<span class="token punctuation">;</span>
+		storage <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// &#x751F;&#x4EA7;&#x65B9;&#x6CD5;</span>
+	<span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">try</span> <span class="token punctuation">{</span>
+			<span class="token keyword">while</span> <span class="token punctuation">(</span>storage<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// &#x5982;&#x679C;&#x961F;&#x5217;&#x6EE1;&#x4E86;</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;: wait \n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">;</span>
+				<span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x963B;&#x585E;&#x7EBF;&#x7A0B;</span>
+			<span class="token punctuation">}</span>
+			storage<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;: put:&quot;</span> <span class="token operator">+</span> storage<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token function">notifyAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x5524;&#x8D77;&#x7EBF;&#x7A0B;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// TODO Auto-generated catch block</span>
+			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// &#x6D88;&#x8D39;&#x65B9;&#x6CD5;</span>
+	<span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">try</span> <span class="token punctuation">{</span>
+			<span class="token keyword">while</span> <span class="token punctuation">(</span>storage<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// &#x5982;&#x679C;&#x961F;&#x5217;&#x6EE1;&#x4E86;</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;: wait \n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">;</span>
+				<span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x963B;&#x585E;&#x7EBF;&#x7A0B;</span>
+			<span class="token punctuation">}</span>
+			<span class="token class-name">Date</span> d <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Date</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span> storage<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;: take:&quot;</span> <span class="token operator">+</span> storage<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token function">notifyAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x5524;&#x8D77;&#x7EBF;&#x7A0B;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// TODO Auto-generated catch block</span>
+			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//&#x751F;&#x4EA7;&#x8005;</span>
+<span class="token keyword">class</span> <span class="token class-name">Producer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+	<span class="token keyword">private</span> <span class="token class-name">Buffer</span> buffer<span class="token punctuation">;</span>
+
+	<span class="token class-name">Producer</span><span class="token punctuation">(</span><span class="token class-name">Buffer</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		buffer <span class="token operator">=</span> b<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//&#x6D88;&#x8D39;&#x8005;</span>
+<span class="token keyword">class</span> <span class="token class-name">Consumer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+	<span class="token keyword">private</span> <span class="token class-name">Buffer</span> buffer<span class="token punctuation">;</span>
+
+	<span class="token class-name">Consumer</span><span class="token punctuation">(</span><span class="token class-name">Buffer</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		buffer <span class="token operator">=</span> b<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			buffer<span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token class-name">Buffer</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">Producer</span> producer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Producer</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">Consumer</span> consumer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Consumer</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">// &#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x751F;&#x4EA7;&#x548C;&#x6D88;&#x8D39;</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>producer<span class="token punctuation">,</span> <span class="token string">&quot;producer-&quot;</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>consumer<span class="token punctuation">,</span> <span class="token string">&quot;consumer-&quot;</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><p>&#x5C06;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x8F6C;&#x6362;&#x4E3A;&#x4F7F;&#x7528;lock/condition&#x5B9E;&#x73B0;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Date</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">LinkedList</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>locks</span><span class="token punctuation">.</span><span class="token class-name">Condition</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>locks</span><span class="token punctuation">.</span><span class="token class-name">Lock</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>locks</span><span class="token punctuation">.</span><span class="token class-name">ReentrantLock</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Buffer</span> <span class="token punctuation">{</span>
+	<span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">Lock</span> lock<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">Condition</span> notFull<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">Condition</span> notEmpty<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token keyword">int</span> maxSize<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Date</span><span class="token punctuation">&gt;</span></span> storage<span class="token punctuation">;</span>
+
+	<span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">// &#x4F7F;&#x7528;&#x9501;lock&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;condition&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4E24;&#x4E2A;&#x963B;&#x585E;&#x961F;&#x5217;</span>
+		lock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReentrantLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		notFull <span class="token operator">=</span> lock<span class="token punctuation">.</span><span class="token function">newCondition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		notEmpty <span class="token operator">=</span> lock<span class="token punctuation">.</span><span class="token function">newCondition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		maxSize <span class="token operator">=</span> size<span class="token punctuation">;</span>
+		storage <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		lock<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">try</span> <span class="token punctuation">{</span>
+			<span class="token keyword">while</span> <span class="token punctuation">(</span>storage<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// &#x5982;&#x679C;&#x961F;&#x5217;&#x6EE1;&#x4E86;</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;: wait \n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">;</span>
+				notFull<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x963B;&#x585E;&#x751F;&#x4EA7;&#x7EBF;&#x7A0B;</span>
+			<span class="token punctuation">}</span>
+			storage<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;: put:&quot;</span> <span class="token operator">+</span> storage<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			notEmpty<span class="token punctuation">.</span><span class="token function">signalAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x5524;&#x9192;&#x6D88;&#x8D39;&#x7EBF;&#x7A0B;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// TODO Auto-generated catch block</span>
+			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+			lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		lock<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">try</span> <span class="token punctuation">{</span>
+			<span class="token keyword">while</span> <span class="token punctuation">(</span>storage<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// &#x5982;&#x679C;&#x961F;&#x5217;&#x6EE1;&#x4E86;</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;: wait \n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">;</span>
+				notEmpty<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x963B;&#x585E;&#x6D88;&#x8D39;&#x7EBF;&#x7A0B;</span>
+			<span class="token punctuation">}</span>
+			<span class="token class-name">Date</span> d <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Date</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span> storage<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;: take:&quot;</span> <span class="token operator">+</span> storage<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			notFull<span class="token punctuation">.</span><span class="token function">signalAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x5524;&#x9192;&#x751F;&#x4EA7;&#x7EBF;&#x7A0B;</span>
+
+		<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// TODO Auto-generated catch block</span>
+			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+			lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Producer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+	<span class="token keyword">private</span> <span class="token class-name">Buffer</span> buffer<span class="token punctuation">;</span>
+
+	<span class="token class-name">Producer</span><span class="token punctuation">(</span><span class="token class-name">Buffer</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		buffer <span class="token operator">=</span> b<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Consumer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+	<span class="token keyword">private</span> <span class="token class-name">Buffer</span> buffer<span class="token punctuation">;</span>
+
+	<span class="token class-name">Consumer</span><span class="token punctuation">(</span><span class="token class-name">Buffer</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		buffer <span class="token operator">=</span> b<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			buffer<span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token class-name">Buffer</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">Producer</span> producer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Producer</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">Consumer</span> consumer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Consumer</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>producer<span class="token punctuation">,</span> <span class="token string">&quot;producer-&quot;</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>consumer<span class="token punctuation">,</span> <span class="token string">&quot;consumer-&quot;</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h1 class="mume-header" id="blockingqueue%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97">BlockingQueue&#x963B;&#x585E;&#x961F;&#x5217;</h1>
+
+<p>&#x963B;&#x585E;&#x961F;&#x5217; (<code>BlockingQueue</code>)&#x662F;<code>java.util.concurrent</code>&#x5305;&#x4E0B;&#x91CD;&#x8981;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;<code>BlockingQueue</code>&#x63D0;&#x4F9B;&#x4E86;<strong>&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x961F;&#x5217;</strong>&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#xFF1A;&#x5F53;&#x963B;&#x585E;&#x961F;&#x5217;&#x8FDB;&#x884C;&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x961F;&#x5217;&#x5DF2;&#x6EE1;&#xFF0C;&#x7EBF;&#x7A0B;&#x5C06;&#x4F1A;&#x963B;&#x585E;&#x7B49;&#x5F85;&#x76F4;&#x5230;&#x961F;&#x5217;&#x975E;&#x6EE1;&#xFF1B;&#x4ECE;&#x963B;&#x585E;&#x961F;&#x5217;&#x53D6;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x961F;&#x5217;&#x5DF2;&#x7A7A;&#xFF0C;&#x7EBF;&#x7A0B;&#x5C06;&#x4F1A;&#x963B;&#x585E;&#x7B49;&#x5F85;&#x76F4;&#x5230;&#x961F;&#x5217;&#x975E;&#x7A7A;&#x3002;</p>
+<p>&#x63A5;&#x53E3;&#x5185;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th>&#x629B;&#x5F02;&#x5E38;</th>
+<th>&#x7279;&#x5B9A;&#x503C;</th>
+<th>&#x963B;&#x585E;</th>
+<th>&#x8D85;&#x65F6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>&#x63D2;&#x5165;</strong></td>
+<td>add(o)</td>
+<td>offer(o)</td>
+<td>put(o)</td>
+<td>offer(o, timeout, timeunit)</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>&#x79FB;&#x9664;</strong></td>
+<td>remove(o)</td>
+<td>poll(o)</td>
+<td>take(o)</td>
+<td>poll(timeout, timeunit)</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>&#x68C0;&#x67E5;</strong></td>
+<td>element(o)</td>
+<td>peek(o)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>&#x629B;&#x5F02;&#x5E38;&#xFF1A;&#x5982;&#x679C;&#x8BD5;&#x56FE;&#x7684;&#x64CD;&#x4F5C;&#x65E0;&#x6CD5;&#x7ACB;&#x5373;&#x6267;&#x884C;&#xFF0C;&#x629B;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x3002;<br>
+&#x7279;&#x5B9A;&#x503C;&#xFF1A;&#x5982;&#x679C;&#x8BD5;&#x56FE;&#x7684;&#x64CD;&#x4F5C;&#x65E0;&#x6CD5;&#x7ACB;&#x5373;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x503C;(&#x5E38;&#x5E38;&#x662F; true / false)&#x3002;<br>
+&#x963B;&#x585E;&#xFF1A;&#x5982;&#x679C;&#x8BD5;&#x56FE;&#x7684;&#x64CD;&#x4F5C;&#x65E0;&#x6CD5;&#x7ACB;&#x5373;&#x6267;&#x884C;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x5C06;&#x4F1A;&#x53D1;&#x751F;&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230;&#x80FD;&#x591F;&#x6267;&#x884C;&#x3002;<br>
+&#x8D85;&#x65F6;&#xFF1A;&#x5982;&#x679C;&#x8BD5;&#x56FE;&#x7684;&#x64CD;&#x4F5C;&#x65E0;&#x6CD5;&#x7ACB;&#x5373;&#x6267;&#x884C;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x5C06;&#x4F1A;&#x53D1;&#x751F;&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230;&#x80FD;&#x591F;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;&#x7ED9;&#x5B9A;&#x503C;&#x3002;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x503C;&#x4EE5;&#x544A;&#x77E5;&#x8BE5;&#x64CD;&#x4F5C;&#x662F;&#x5426;&#x6210;&#x529F;(&#x5178;&#x578B;&#x7684;&#x662F;true / false)&#x3002;</p>
+<p><strong>BlockingQueue &#x7684;&#x5B9E;&#x73B0;&#x7C7B;</strong></p>
+<ol>
+<li>
+<p><code>ArrayBlockingQueue</code>&#xFF1A;<code>ArrayBlockingQueue</code>&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x754C;&#x7684;&#x963B;&#x585E;&#x961F;&#x5217;&#xFF0C;&#x5176;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x662F;&#x5C06;&#x5BF9;&#x8C61;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x91CC;&#x3002;&#x6709;&#x754C;&#x4E5F;&#x5C31;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5B83;&#x4E0D;&#x80FD;&#x591F;&#x5B58;&#x50A8;&#x65E0;&#x9650;&#x591A;&#x6570;&#x91CF;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x80FD;&#x591F;&#x5B58;&#x50A8;&#x5143;&#x7D20;&#x6570;&#x91CF;&#x7684;&#x4E0A;&#x9650;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x5BF9;&#x5176;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x8BBE;&#x5B9A;&#x8FD9;&#x4E2A;&#x4E0A;&#x9650;&#xFF0C;&#x4F46;&#x4E4B;&#x540E;&#x5C31;&#x65E0;&#x6CD5;&#x5BF9;&#x8FD9;&#x4E2A;&#x4E0A;&#x9650;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x4E86;(&#x8BD1;&#x8005;&#x6CE8;&#xFF1A;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x57FA;&#x4E8E;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x5177;&#x6709;&#x6570;&#x7EC4;&#x7684;&#x7279;&#x6027;&#xFF1A;&#x4E00;&#x65E6;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5927;&#x5C0F;&#x5C31;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;)&#x3002;</p>
+</li>
+<li>
+<p><code>DelayQueue</code>&#xFF1A;<code>DelayQueue</code>&#x5BF9;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x6301;&#x6709;&#x76F4;&#x5230;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x5EF6;&#x8FDF;&#x5230;&#x671F;&#x3002;&#x6CE8;&#x5165;&#x5176;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;<code>java.util.concurrent.Delayed</code>&#x63A5;&#x53E3;&#x3002;</p>
+</li>
+<li>
+<p><code>LinkedBlockingQueue</code>&#xFF1A;<code>LinkedBlockingQueue</code>&#x5185;&#x90E8;&#x4EE5;&#x4E00;&#x4E2A;&#x94FE;&#x5F0F;&#x7ED3;&#x6784;(&#x94FE;&#x63A5;&#x8282;&#x70B9;)&#x5BF9;&#x5176;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x5B58;&#x50A8;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x4E00;&#x94FE;&#x5F0F;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x4E0A;&#x9650;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x4E0A;&#x9650;&#xFF0C;&#x5C06;&#x4F7F;&#x7528; Integer.MAX_VALUE &#x4F5C;&#x4E3A;&#x4E0A;&#x9650;&#x3002;</p>
+</li>
+<li>
+<p><code>PriorityBlockingQueue</code>&#xFF1A;<code>PriorityBlockingQueue</code>&#x662F;&#x4E00;&#x4E2A;&#x65E0;&#x754C;&#x7684;&#x5E76;&#x53D1;&#x961F;&#x5217;&#x3002;&#x5B83;&#x4F7F;&#x7528;&#x4E86;&#x548C;&#x7C7B;<code>java.util.PriorityQueue</code>&#x4E00;&#x6837;&#x7684;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#x3002;&#x4F60;&#x65E0;&#x6CD5;&#x5411;&#x8FD9;&#x4E2A;&#x961F;&#x5217;&#x4E2D;&#x63D2;&#x5165; null &#x503C;&#x3002;&#x6240;&#x6709;&#x63D2;&#x5165;&#x5230;<code>PriorityBlockingQueue</code>&#x7684;&#x5143;&#x7D20;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;<code>java.lang.Comparable</code>&#x63A5;&#x53E3;&#x3002;&#x56E0;&#x6B64;&#x8BE5;&#x961F;&#x5217;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x6392;&#x5E8F;&#x5C31;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x81EA;&#x5DF1;&#x7684;<code>Comparable</code>&#x5B9E;&#x73B0;&#x3002;</p>
+</li>
+<li>
+<p><code>SynchronousQueue</code>&#xFF1A;<code>SynchronousQueue</code>&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x961F;&#x5217;&#xFF0C;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x540C;&#x65F6;&#x53EA;&#x80FD;&#x591F;&#x5BB9;&#x7EB3;&#x5355;&#x4E2A;&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x961F;&#x5217;&#x5DF2;&#x6709;&#x4E00;&#x5143;&#x7D20;&#x7684;&#x8BDD;&#xFF0C;&#x8BD5;&#x56FE;&#x5411;&#x961F;&#x5217;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x5143;&#x7D20;&#x7684;&#x7EBF;&#x7A0B;&#x5C06;&#x4F1A;&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5C06;&#x8BE5;&#x5143;&#x7D20;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x62BD;&#x8D70;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x961F;&#x5217;&#x4E3A;&#x7A7A;&#xFF0C;&#x8BD5;&#x56FE;&#x5411;&#x961F;&#x5217;&#x4E2D;&#x62BD;&#x53D6;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x7EBF;&#x7A0B;&#x5C06;&#x4F1A;&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5411;&#x961F;&#x5217;&#x4E2D;&#x63D2;&#x5165;&#x4E86;&#x4E00;&#x6761;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x3002;&#x636E;&#x6B64;&#xFF0C;&#x628A;&#x8FD9;&#x4E2A;&#x7C7B;&#x79F0;&#x4F5C;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x663E;&#x7136;&#x662F;&#x5938;&#x5927;&#x5176;&#x8BCD;&#x4E86;&#x3002;&#x5B83;&#x66F4;&#x591A;&#x50CF;&#x662F;&#x4E00;&#x4E2A;&#x6C47;&#x5408;&#x70B9;&#x3002;</p>
+</li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

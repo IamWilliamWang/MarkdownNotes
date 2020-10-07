@@ -1,0 +1,486 @@
+<!DOCTYPE html><html><head>
+      <title>&#x9762;&#x8BD5;&#x7CBE;-Java</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\William\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p><span id="top"><strong>&#x76EE;&#x5F55;</strong></span><br>
+<a href="#java">Java&#x3001;GC</a><br>
+<a href="#jvm">JVM&#x3001;&#x5185;&#x5B58;&#x7BA1;&#x7406;</a><br>
+<a href="#lock">Java&#x9501;</a><br>
+<a href="#threadpool">Java&#x7EBF;&#x7A0B;&#x3001;&#x7EBF;&#x7A0B;&#x6C60;</a><br>
+<a href="#nio">IO&#x591A;&#x8DEF;&#x590D;&#x7528;</a><br>
+<a href="#ssm">Java&#x6846;&#x67B6;</a><br>
+<a href="#db">&#x6570;&#x636E;&#x5E93;&#x57FA;&#x7840;</a><br>
+<a href="#mysql">MySql</a><br>
+<a href="#redis">Redis</a><br>
+<a href="#os">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</a><br>
+<a href="#network">&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;</a><br>
+<a href="#cpp">C++</a><br>
+<a href="#others">&#x5176;&#x4ED6;</a></p>
+<p><span id="java"><strong>Java&#x3001;GC</strong></span><br>
+<a href="https://www.cnblogs.com/dmzna/archive/2020/05/18/12913458.html">Java GC&#x8FC7;&#x7A0B;&#x3001;&#x6536;&#x96C6;&#x5668;</a><br>
+<a href="https://my.oschina.net/u/3159571/blog/3021068"><font size="2">G1&#x56DE;&#x6536;&#x8FC7;&#x7A0B;{0.3}</font></a><br>
+<a href="https://www.bilibili.com/read/cv5021445/"><font size="2"><u>&#x5143;&#x7A7A;&#x95F4;{0.6}</u></font></a><br>
+<font size="2">&#x5143;&#x7A7A;&#x95F4;&#x4E0D;&#x4E0E;&#x5806;&#x8FDE;&#x7EED;&#xFF0C;&#x5B58;&#x5728;&#x4E8E;&#x672C;&#x5730;&#x5185;&#x5B58;</font><br>
+<a href="https://www.cnblogs.com/kuyuyingzi/p/4266272.html"><u>&#x7EBF;&#x7A0B;&#x4F20;&#x9012;&#x6570;&#x636E;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;</u></a><br>
+<font size="2">&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x3001;&#x53D8;&#x91CF;&#x548C;&#x65B9;&#x6CD5;&#x3001;&#x56DE;&#x8C03;&#x51FD;&#x6570;</font><br>
+<a href="https://www.cnblogs.com/heqiyoujing/p/11143525.html"><u>ConcurrentHashMap&#x7B80;&#x5355;&#x539F;&#x7406;</u></a><br>
+<font size="2">ReentrantLock+Segment+HashEntry&#xFF0C;synchronized+CAS+HashEntry+&#x7EA2;&#x9ED1;&#x6811;</font><br>
+<a href="https://www.cnblogs.com/lfs2640666960/p/9621461.html">ConcurrentHashMap&#x6269;&#x5BB9;&#x539F;&#x7406;{0.6}</a><br>
+<a href="https://www.cnblogs.com/Zombie-Xian/p/6236072.html"><u>Java&#x53CD;&#x5C04;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;</u></a><br>
+<font size="2">obj.getClass&#x3001;Object.class&#x3001;Class.forName</font><br>
+<a href="https://blog.csdn.net/li1914309758/article/details/80997342">&#x7EA2;&#x9ED1;&#x6811;</a><br>
+<a href="https://blog.csdn.net/21aspnet/article/details/88939297"><u>&#x7EA2;&#x9ED1;&#x6811;&#x548C;AVL&#x7684;&#x533A;&#x522B;{0.4}</u></a><br>
+&#x6839;&#x5230;&#x53F6;&#x5B50;&#x7EA2;&#x9ED1;2:1&#xFF0C;AVL 1&#xFF1B;&#x7EA2;&#x9ED1;&#x6811;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x9700;&#x8981;&#x7684;&#x65CB;&#x8F6C;&#x8F83;&#x5C11;&#xFF0C;AVL&#x6811;&#x67E5;&#x627E;&#x66F4;&#x5FEB;<br>
+<a href="https://zhidao.baidu.com/question/617730779498831812.html"><u>&#x5E38;&#x89C1;RuntimeException</u></a><br>
+<font size="2">NullPointer&#x3001;NumberFormat&#x3001;ClassCst&#x3001;IllegalArgument&#x3001;IndexOutOfBounds&#xFF08;SQL&#x3001;IO&#x3001;Socket&#x662F;&#x68C0;&#x67E5;&#x578B;&#xFF09;</font><br>
+<a href="https://www.zhihu.com/question/41377757">&#x5E38;&#x89C1;&#x7F13;&#x5B58;&#x6280;&#x672F;{0.3}</a><br>
+<a href="https://blog.csdn.net/baidu_22254181/article/details/82555485">&#x5F3A;&#x5F15;&#x7528;&#x3001;&#x5F31;&#x5F15;&#x7528;&#x3001;&#x8F6F;&#x5F15;&#x7528;&#x548C;&#x865A;&#x5F15;&#x7528;</a><br>
+<a href="https://wenchao.ren/2019/09/gc-Roots%E5%AF%B9%E8%B1%A1%E6%9C%89%E5%93%AA%E4%BA%9B/">GC root</a><br>
+<a href="https://www.cnblogs.com/Cavalry-/p/11233862.html">Java Socket&#x7B80;&#x5355;&#x4F8B;&#x5B50;</a><br>
+<a href="https://www.cnblogs.com/fnlingnzb-learner/p/7263947.html"><u>Object&#x7C7B;</u></a><br>
+clone equals finalize getClass hashCode notify notifyAll toString wait<br>
+<a href="https://www.cnblogs.com/200911/p/5994044.html"><u>BlockingQueue</u></a><br>
+<a href="https://blog.csdn.net/chenkaibsw/article/details/81606722"><u>&#x5B57;&#x8282;&#x6D41;&#x548C;&#x5B57;&#x7B26;&#x6D41;</u></a><br>
+<font size="2">&#x5B57;&#x8282;&#x6D41;&#x4E0D;&#x4F7F;&#x7528;&#x7F13;&#x51B2;&#x533A;</font><br>
+<a href="https://www.runoob.com/java/java-override-overload.html">&#x91CD;&#x8F7D;&#x548C;&#x91CD;&#x5199;</a><br>
+<a href="https://developer.ibm.com/zh/articles/j-lo-classloader/">Class Loader</a><br>
+<a href="https://blog.csdn.net/chen213wb/article/details/84647179">HashMap&#x548C;HashSet&#x533A;&#x522B;{0.8}</a><br>
+<a href="http://baijiahao.baidu.com/s?id=1656137152537394906">HashMap&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x4E3A;&#x4EC0;&#x4E48;&#x9009;&#x62E9;0.75</a><br>
+<a href="https://blog.csdn.net/baidu_37107022/article/details/76860371"><u>&#x5E8F;&#x5217;&#x5316;ID&#x7684;&#x4F5C;&#x7528;{0.6}</u></a><br>
+<font size="2">&#x9A8C;&#x8BC1;&#x7248;&#x672C;&#x4E00;&#x81F4;&#x6027;</font><br>
+<u>lambda&#x5E38;&#x7528;&#x51FD;&#x6570;</u><br>
+<font size="2">map&#x3001;filter&#x3001;sorted&#x3001;forEach&#x3001;reduce&#x3001;collect&#x3001;max&#x3001;min&#x3001;count&#x3001;toArray&#x3001;findFirst</font><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="jvm"><strong>JVM&#x3001;&#x5185;&#x5B58;&#x7BA1;&#x7406;</strong></span><br>
+<a href="https://blog.csdn.net/zengxiantao1994/article/details/89303290"><u>JVM&#x5185;&#x5B58;&#x6A21;&#x578B;/&#x7BA1;&#x7406;</u></a><br>
+<font size="2">&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#xFF0C;Java&#x865A;&#x62DF;&#x673A;&#x6808;&#xFF0C;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#xFF0C;Java&#x5806;&#xFF0C;&#x65B9;&#x6CD5;&#x533A;</font><br>
+<a href="https://blog.csdn.net/cnahyz/article/details/82219210">Java&#x7684;&#x7C7B;&#x52A0;&#x8F7D;&#x673A;&#x5236;</a><br>
+<a href="https://blog.csdn.net/qq_20081637/article/details/80875779"><u>&#x5404;&#x8BED;&#x8A00;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x533A;&#x522B;</u></a><br>
+<font size="2">C&#xFF1A;&#x6808;&#x3001;&#x5806;&#x3001;&#x9759;&#x6001;&#x6587;&#x5B57;&#x3001;&#x5E38;&#x91CF;&#x3001;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x533A;</font><br>
+<a href="https://blog.csdn.net/yrwan95/article/details/82826519">-Xss -Xms -Xmx -Xmn &#x53C2;&#x6570;</a><br>
+<a href="https://www.cnblogs.com/DDiamondd/p/11298477.html">JVM&#x542F;&#x52A8;&#x8FC7;&#x7A0B;</a><br>
+<a href="https://www.cnblogs.com/tiancai/p/12674192.html"><u>JVM&#x5E38;&#x91CF;&#x6C60;&#x7684;&#x5185;&#x5BB9;&#xFF0C;JAVA8&#x53D8;&#x5316;</u></a><br>
+<font size="2">&#x9759;&#x6001;&#x5E38;&#x91CF;&#x6C60;&#x3001;&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x6C60;&#x3001;&#x6574;&#x578B;&#x5E38;&#x91CF;&#x6C60;&#x3002;&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#x642C;&#x5230;&#x4E86;&#x5143;&#x7A7A;&#x95F4;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x6C60;&#x642C;&#x5230;&#x4E86;&#x5806;</font><br>
+<a href="https://blog.csdn.net/smile_YangYue/article/details/80219001">JVM&#x5185;&#x5B58;&#x6CC4;&#x6F0F;/&#x6CC4;&#x9732;&#x573A;&#x666F;</a><br>
+<font size="2">&#x96C6;&#x5408;&#x7C7B;(&#x5BF9;&#x8C61;hash&#x503C;&#x88AB;&#x6539;&#x53D8;)&#x3001;&#x5404;&#x79CD;&#x8FDE;&#x63A5;&#x4E0D;close&#x3001;&#x4E0D;&#x5408;&#x7406;&#x7684;&#x4F5C;&#x7528;&#x57DF;(&#x628A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4F5C;&#x4E3A;&#x7C7B;&#x53D8;&#x91CF;)</font><br>
+<a href="https://www.cnblogs.com/yinbiao/p/10613585.html">JVM&#x5185;&#x5B58;&#x6EA2;&#x51FA;OOM&#x573A;&#x666F;</a><br>
+<a href="https://www.cnblogs.com/zhi-leaf/p/10629033.html">JVM&#x5E38;&#x7528;&#x547D;&#x4EE4;&#x3001;Jstat&#x76D1;&#x63A7;&#x5806;&#x5185;&#x5916;&#x5185;&#x5B58;(Jconsole&#x3001;JVisualVM)</a><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="lock"><strong>Java&#x9501;</strong></span><br>
+<a href="https://www.cnblogs.com/cyrbjh/p/12404794.html">Java&#x5E76;&#x53D1;&#x9501;&#x3001;synchronized&#x3001;CAS&#x3001;AQS</a><br>
+<a href="https://blog.csdn.net/weixin_45097458/article/details/103222246"><font size="2">CAS&#x4FDD;&#x8BC1;&#x539F;&#x5B50;&#x6027;</font></a><br>
+<a href="https://blog.csdn.net/qq_29373285/article/details/85164190"><font size="2">&#x5E95;&#x5C42;AQS&#x5B9E;&#x73B0;&#x539F;&#x7406;(ReentrantLock){0.85}</font></a><br>
+<a href="https://blog.csdn.net/sinat_29774479/article/details/86648801">Java&#x9501;&#x5347;&#x7EA7;&#x8FC7;&#x7A0B;</a><br>
+<a href="https://blog.csdn.net/jinfeiteng2008/article/details/53423858">volatile&#x7684;&#x539F;&#x5219;&#x548C;&#x5E94;&#x7528;&#x573A;&#x666F;{0.15}</a><br>
+<a href="https://blog.csdn.net/weixin_43982927/article/details/107969119">volatile&#x7981;&#x7528;&#x6307;&#x4EE4;&#x91CD;&#x6392;&#x7684;&#x76EE;&#x7684;{0.7}</a><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="threadpool"><strong>Java&#x7EBF;&#x7A0B;&#x3001;&#x7EBF;&#x7A0B;&#x6C60;</strong></span><br>
+<a href="https://www.cnblogs.com/marsitman/p/11228684.html"><u>&#x7EBF;&#x7A0B;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</u></a><br>
+<font size="2">&#x65B0;&#x5EFA;&#x3001;&#x5C31;&#x7EEA;&#x3001;&#x8FD0;&#x884C;&#x3001;&#x963B;&#x585E;&#x3001;&#x9500;&#x6BC1;</font><br>
+<a href="https://blog.csdn.net/qq_24692041/article/details/78468671">&#x7EBF;&#x7A0B;5&#x79CD;&#x72B6;&#x6001;&#xFF08;&#x8F6C;&#x6362;&#x51FD;&#x6570;sleep,join,wait,notify,notifyAll,yield&#xFF09;</a><br>
+<a href="https://www.cnblogs.com/noino/p/11265000.html"><u>&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x6362;&#x51FD;&#x6570;</u></a><br>
+<font size="2">Running&#x3001;ShutDown&#xFF08;&#x4E0D;&#x63A5;&#x53D7;&#xFF09;&#x3001;Stop&#xFF08;&#x6253;&#x65AD;&#x6240;&#x6709;&#xFF09;&#x3001;Tidying&#xFF08;workCount==0&#xFF09;&#x3001;Terminated&#xFF08;&#x6267;&#x884C;&#x5B8C;terminated()&#xFF09;</font><br>
+<a href="https://blog.csdn.net/abcdf123456er/article/details/107819340">&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x4E09;&#x5927;&#x65B9;&#x6CD5;&#x3001;&#x4E03;&#x5927;&#x53C2;&#x6570;&#x3001;&#x56DB;&#x79CD;&#x62D2;&#x7EDD;&#x7B56;&#x7565;</a><br>
+<a href="https://www.jianshu.com/p/6fc3bba12f38">ThreadLocal&#x7EBF;&#x7A0B;&#x5C40;&#x90E8;&#x5B58;&#x50A8;</a><br>
+<a href="https://blog.csdn.net/puppylpg/article/details/80433271">ThreadLocal&#x5185;&#x5B58;&#x6CC4;&#x6F0F;/&#x6CC4;&#x9732;</a><br>
+<a href="https://blog.csdn.net/wlddhj/article/details/83793709">Java&#x7EBF;&#x7A0B;&#x901A;&#x4FE1;</a><br>
+<a href="https://blog.csdn.net/a60782885/article/details/77803757"><u>Java&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x4E09;&#x5927;&#x6027;&#x8D28;</u></a><br>
+&#x539F;&#x5B50;&#x6027;&#xFF0C;&#x6709;&#x5E8F;&#x6027;&#x548C;&#x53EF;&#x89C1;&#x6027;<br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="nio"><strong>IO&#x591A;&#x8DEF;&#x590D;&#x7528;</strong></span><br>
+<a href="https://blog.csdn.net/weixin_44571270/article/details/106651083"><u>IO&#x6A21;&#x578B;</u></a><br>
+<font size="2">&#x540C;&#x6B65;&#x963B;&#x585E;IO&#x3001;&#x540C;&#x6B65;&#x975E;&#x963B;&#x585E;&#x3001;IO&#x591A;&#x8DEF;&#x590D;&#x7528;&#x3001;&#x5F02;&#x6B65;IO</font><br>
+<a href="https://www.cnblogs.com/crazymakercircle/p/10225159.html"><font size="2">IO&#x6A21;&#x578B;&#x8BE6;&#x89E3;</font></a><br>
+<a href="https://blog.csdn.net/lisha006/article/details/82856906"><u>NIO&#x548C;AIO&#x5E94;&#x7528;&#x573A;&#x666F;&#x533A;&#x522B;</u></a><br>
+<font size="2">&#x5982;&#x679C;NIO&#x4E0D;&#x9002;&#x5408;&#x8BFB;&#x5199;&#x65F6;&#x95F4;&#x957F;&#x7684;&#x901A;&#x9053;&#xFF0C;AIO&#x9002;&#x5408;</font><br>
+<a href="https://blog.csdn.net/forezp/article/details/88414741">Java NIO&#xFF08;Channels&#x3001;Buffers&#x3001;Selectors&#xFF09;</a><br>
+<a href="https://www.jianshu.com/p/397449cadc9a">select&#x3001;poll&#x3001;epoll</a><br>
+<a href="https://blog.csdn.net/qq_35210580/article/details/98603051"><font size="2">epoll&#x7684;&#x51FD;&#x6570;</font></a><br>
+<a href="https://www.jianshu.com/p/d3442ff24ba6"><font size="2">epoll ET&#x4E0E;LT</font></a><br>
+<a href="https://www.cnblogs.com/anjianliang/p/4317908.html">epollin&#x548C;epollout&#x4E8B;&#x4EF6;</a><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="ssm"><strong>Java&#x6846;&#x67B6;</strong></span><br>
+<a href="https://www.jianshu.com/p/231a582d2a02/">SSM&#x9AD8;&#x9891;&#x8003;&#x70B9;</a><br>
+<a href="https://www.jianshu.com/p/ffe5ebe17c3a">Spring&#x548C;SpringBoot&#x533A;&#x522B;</a><br>
+<a href="https://blog.csdn.net/weixin_45136046/article/details/90768687">SpringBoot&#x9AD8;&#x9891;&#x8003;&#x70B9;</a><br>
+<a href="https://blog.csdn.net/yoyoxh/article/details/89210184"><u>&#x5E38;&#x7528;web&#x5BB9;&#x5668;</u></a><br>
+<font size="2">&#x4E2A;&#x4EBA;&#x5F00;&#x53D1;Tomcat/Nginx&#xFF0C;&#x5927;&#x9879;&#x76EE;weblgoic/webshere</font><br>
+<a href="https://blog.csdn.net/jaryle/article/details/52389672"><u>IOC&#x3001;AOP&#x7B80;&#x8FF0;</u></a><br>
+<font size="2">&#x63A7;&#x5236;&#x53CD;&#x8F6C;(&#x7C7B;&#x7684;&#x89E3;&#x8026;)&#x4E24;&#x79CD;&#x5B9E;&#x73B0;&#xFF1A;<a href="https://www.jianshu.com/p/17b66e6390fd">&#x4F9D;&#x8D56;&#x67E5;&#x627E;&#x548C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</a>&#x3002;&#x9762;&#x5411;&#x5207;&#x9762;&#x7684;&#x7F16;&#x7A0B;(&#x66F4;&#x6E05;&#x6670;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x53BB;&#x5173;&#x6CE8;&#x81EA;&#x5DF1;&#x672C;&#x8EAB;&#x7684;&#x4E1A;&#x52A1;&#xFF0C;&#x800C;&#x4E0D;&#x53BB;&#x5173;&#x6CE8;&#x5B89;&#x5168;&#xFF0C;&#x4E8B;&#x7269;&#xFF0C;&#x65E5;&#x5FD7;&#x7B49;&#x6D3B;&#x52A8;)</font><br>
+<a href="https://blog.csdn.net/sinat_21843047/article/details/80299366">Spring AOP</a><br>
+<a href="https://www.jianshu.com/p/17b66e6390fd">Spring IOC</a><br>
+<a href="https://www.jianshu.com/p/ae1b0287cd0a">SSM&#x4E0E;SSH&#x7684;&#x533A;&#x522B;</a><br>
+<a href="https://www.nowcoder.com/discuss/472496">SSH&#x539F;&#x7406;</a><br>
+<a href="https://blog.csdn.net/u014484743/article/details/53197351/">SSH&#x8BE6;&#x89E3;</a><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="db"><strong>&#x6570;&#x636E;&#x5E93;&#x57FA;&#x7840;</strong></span><br>
+<u>&#x4E8B;&#x52A1;&#x7684;&#x5B9A;&#x4E49;</u><br>
+<font size="2">&#x662F;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#x7684;&#x6700;&#x5C0F;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#xFF0C;&#x662F;&#x4F5C;&#x4E3A;&#x5355;&#x4E2A;&#x903B;&#x8F91;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#x6267;&#x884C;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x64CD;&#x4F5C;&#xFF1B;&#x8981;&#x4E48;&#x90FD;&#x6267;&#x884C;&#x3001;&#x8981;&#x4E48;&#x90FD;&#x4E0D;&#x6267;&#x884C;&#xFF1B;&#x662F;&#x4E00;&#x7EC4;&#x4E0D;&#x53EF;&#x518D;&#x5206;&#x5272;&#x7684;&#x5DE5;&#x4F5C;&#x5355;&#x5143;</font><br>
+<a href="https://blog.csdn.net/weixin_43326401/article/details/104003945"><u>ACID&#x3001;&#x5982;&#x4F55;&#x4FDD;&#x8BC1;</u></a><br>
+<font size="2">&#x539F;&#x5B50;&#x6027;&#x3001;&#x4E00;&#x81F4;&#x6027;&#x3001;&#x9694;&#x79BB;&#x6027;&#x548C;&#x6301;&#x4E45;&#x6027;</font><br>
+<a href="https://www.cnblogs.com/jian-gao/p/10795407.html"><u>&#x9694;&#x79BB;&#x7EA7;&#x522B;</u></a><br>
+<font size="2">&#x8BFB;&#x672A;&#x63D0;&#x4EA4;&#x3001;&#x8BFB;&#x63D0;&#x4EA4;&#x3001;&#x53EF;&#x91CD;&#x590D;&#x8BFB;&#x3001;&#x53EF;&#x4E32;&#x884C;&#x5316;&#xFF1B;&#x89E3;&#x51B3;&#x66F4;&#x65B0;&#x4E22;&#x5931;&#xFF0C;&#x4F46;&#x4F1A;&#x810F;&#x8BFB;&#x3002;&#x89E3;&#x51B3;&#x4E86;&#x810F;&#x8BFB;&#x3002;&#x89E3;&#x51B3;&#x4E86;&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x8BFB;&#xFF0C;&#x4F46;&#x4F1A;&#x5E7B;&#x8BFB;&#x3002;&#x53EF;&#x4E32;&#x884C;&#x5316;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x95EE;&#x9898;</font><br>
+<a href="https://www.cnblogs.com/xiangpeng/p/11032047.html"><u>SQL&#x4F18;&#x5316;&#x65B9;&#x6CD5;</u></a><br>
+<font size="2">&#x51CF;&#x5C11;&#x8FD4;&#x56DE;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x6570;&#x636E;&#x3001;&#x51CF;&#x5C11;&#x7269;&#x7406;&#x548C;&#x903B;&#x8F91;&#x8BFB;&#x6B21;&#x6570;&#x3001;&#x51CF;&#x5C11;&#x8BA1;&#x7B97;&#x6B21;&#x6570;</font><br>
+<a href="https://blog.csdn.net/qq_34116402/article/details/79578187">&#x5E38;&#x89C1;&#x975E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;</a><br>
+<font size="2">Hbase&#x3001;Redis&#x3001;MongodDB<a href="https://www.runoob.com/mongodb/nosql.html">NoSql&#x7684;&#x5206;&#x7C7B;{0.85}</a></font><br>
+<a href="https://www.cnblogs.com/hum0ro/p/8877364.html">&#x8303;&#x5F0F;</a><br>
+<a href="https://blog.csdn.net/mine_song/article/details/63251546"><em>B+&#x548C;B&#x6811;&#x7684;&#x533A;&#x522B;</em></a><br>
+<a href="https://blog.csdn.net/u011109881/article/details/80344606"><em>&#x6240;&#x6709;&#x641C;&#x7D22;&#x6811;&#x7684;&#x533A;&#x522B;&#x3001;&#x5E94;&#x7528;&#x3001;&#x590D;&#x6742;&#x5EA6;</em>{0.8}</a><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="mysql"><strong>MySql</strong></span><br>
+<a href="https://www.cnblogs.com/itdragon/p/8194622.html"><u>Mysql&#x8868;&#x9501;&#x3001;&#x884C;&#x9501;&#x3001;&#x4F18;&#x5316;&#x65B9;&#x6CD5;</u></a><br>
+<font size="2">&#x9ED8;&#x8BA4;&#x91C7;&#x7528;&#x884C;&#x9501;&#xFF0C;&#x5728;&#x672A;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x67E5;&#x8BE2;&#xFF08;&#x6216;&#x8005;&#x5168;&#x8868;&#x626B;&#x63CF;&#x6548;&#x7387;&#x66F4;&#x9AD8;&#xFF09;&#x65F6;&#x5347;&#x7EA7;&#x4E3A;&#x8868;&#x9501;&#xFF08;&#x5982;&#x5168;&#x8868;&#x66F4;&#x65B0;&#x3001;&#x591A;&#x8868;&#x7EA7;&#x8054;&#xFF09;</font><br>
+<a href="https://blog.csdn.net/chenkeqin_2012/article/details/53868311">MyISAM &#x548C; InnoDB &#x7684;&#x533A;&#x522B;</a><br>
+<u>&#x8054;&#x5408;&#x7D22;&#x5F15;</u><br>
+<font size="2">CREATE INDEX test2_mm_idx ON test2 (major, minor)</font><br>
+<u>mysql &lt; &gt; = LIKE&#x662F;&#x5426;&#x7D22;&#x5F15;&#x5931;&#x6548;</u><br>
+<font size="2">LIKE&#x53EA;&#x6709;&#x5728;&#x6761;&#x4EF6;&#x9996;&#x90E8;&#x4E0D;&#x662F;%&#x65F6;&#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x83B7;&#x53D6;&#x7684;&#x6570;&#x636E;&#x8F83;&#x5C11;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;&#x7D22;&#x5F15;</font><br>
+<a href="https://blog.csdn.net/look_like/article/details/86486859"><u>&#x7D22;&#x5F15;&#x5931;&#x6548;&#x7684;&#x573A;&#x666F;</u></a><br>
+&#x6761;&#x4EF6;&#x4E2D;&#x6709;or&#xFF1B;&#x4E0D;&#x4F7F;&#x7528;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#xFF1B;&#x7EC4;&#x5408;&#x7D22;&#x5F15;&#xFF1B;LIKE&#x91CC;%&#x5F00;&#x5934;&#xFF1B;&#x5168;&#x8868;&#x626B;&#x63CF;&#x66F4;&#x5FEB;&#x65F6;<br>
+<a href="https://zhuanlan.zhihu.com/p/58536781">redis+mysql&#x7F13;&#x5B58;&#x4E00;&#x81F4;&#x6027;{0.3}</a><br>
+<u>mysql&#x53EF;&#x91CD;&#x590D;&#x8BFB;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;?&#x8BB2;&#x4E00;&#x4E0B;innodb&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6848;</u><br>
+<font size="2">MVCC&#x591A;&#x7248;&#x672C;&#x5E76;&#x53D1;&#x63A7;&#x5236;</font><br>
+<a href="https://www.cnblogs.com/mthp/articles/10668547.html"><u>SQL&#x6CE8;&#x5165;&#x7684;&#x9632;&#x8303;</u></a><br>
+<font size="2">&#x628A;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6570;&#x636E;&#x5E93;&#x6743;&#x9650;&#x964D;&#x81F3;&#x6700;&#x4F4E;&#xFF1B;&#x907F;&#x514D;&#x7F51;&#x7AD9;&#x6253;&#x5370;&#x51FA;SQL&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF1B;&#x5BF9;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x8FDB;&#x884C;&#x8F6C;&#x4E49;&#x5904;&#x7406;&#xFF1B;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x4F7F;&#x7528;&#x53C2;&#x6570;&#x5316;&#x7684;&#x9884;&#x7F16;&#x8BD1;&#x8BED;&#x53E5;</font><br>
+<a href="https://blog.csdn.net/weixin_39220472/article/details/81193617">&#x5DE6;&#x8FDE;&#x63A5;&#x3001;&#x53F3;&#x8FDE;&#x63A5;&#x3001;&#x5185;&#x8FDE;&#x63A5;&#x3001;&#x5168;&#x5916;&#x8FDE;&#x63A5;&#x7684;&#x533A;&#x522B;</a><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="redis"><strong>Redis</strong></span><br>
+<a href="https://www.jianshu.com/p/b7f822935e28">redis&#x7F13;&#x5B58;&#x51FB;&#x7A7F;&#x3001;&#x7A7F;&#x900F;&#x3001;&#x96EA;&#x5D29;</a><br>
+<a href="https://www.jianshu.com/p/735a3d4789fc">redis&#x4E00;&#x81F4;&#x6027;&#x54C8;&#x5E0C;{0.3}</a><br>
+<a href="https://blog.csdn.net/freedomfanye/article/details/79543970">redis&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x573A;&#x666F;</a><br>
+<a href="https://blog.csdn.net/lzhcoder/article/details/88387751">redis&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#xFF0C;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x4EE5;&#x53CA;&#x65F6;&#x95F4;&#x7EED;&#x7EA6;</a><br>
+<a href="https://blog.csdn.net/nxw_tsp/article/details/107966295">redis&#x7684;&#x6301;&#x4E45;&#x5316;RDB&#x548C;AOF</a><br>
+<a href="https://baijiahao.baidu.com/s?id=1655596263155881264">redis&#x6DD8;&#x6C70;&#x7B56;&#x7565;{0.4}</a><br>
+<a href="https://www.jianshu.com/p/ae4c52af3390">redis&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x4E8B;&#x52A1;</a><br>
+<a href="https://my.oschina.net/waylau/blog/625540">CAP</a><br>
+<a href="https://www.jianshu.com/p/a1038eed6d44">Jedis&#x8BE6;&#x89E3;</a><br>
+<u>&#x4E3B;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x7684;&#x597D;&#x5904;</u><br>
+<font size="2">&#x6570;&#x636E;&#x5B89;&#x5168;&#x3001;&#x63D0;&#x5347;I/O&#x6027;&#x80FD;&#x3001;&#x8BFB;&#x5199;&#x5206;&#x79BB;</font><br>
+<u>redis&#x6570;&#x636E;&#x7ED3;&#x6784;</u><br>
+<font size="2">string,hash,list,set&#x53CA;sorted set</font><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="os"><strong>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</strong></span><br>
+<u>&#x4E94;&#x5927;&#x6A21;&#x5757;</u><br>
+<font size="2">&#x5904;&#x7406;&#x5668;&#x7BA1;&#x7406;&#x3001;&#x5B58;&#x50A8;&#x5668;&#x7BA1;&#x7406;&#x3001;&#x8BBE;&#x5907;&#x7BA1;&#x7406;&#x3001;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x3001;&#x4F5C;&#x4E1A;&#x7BA1;&#x7406;</font><br>
+<a href="https://blog.csdn.net/J080624/article/details/87454764">&#x7EBF;&#x7A0B;&#x901A;&#x4FE1;&#x3001;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;</a><br>
+<a href="https://blog.csdn.net/WangQYoho/article/details/52598859"><u>&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B;&#x5360;&#x6709;&#x7684;&#x8D44;&#x6E90;</u></a><br>
+<font size="2">&#x8FDB;&#x7A0B;&#xFF1A;&#x65B9;&#x6CD5;&#x533A;&#x3001;&#x5806;&#x3001;&#x8FDB;&#x7A0B;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3001;&#x8FDB;&#x7A0B;&#x7528;&#x6237;ID&#x4E0E;&#x8FDB;&#x7A0B;&#x7EC4;ID&#xFF1B;&#x7EBF;&#x7A0B;&#xFF1A;&#x6808;&#x3001;&#x5BC4;&#x5B58;&#x5668;&#x3001;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#x3001;&#x7EBF;&#x7A0B;ID&#x3001;&#x4F18;&#x5148;&#x7EA7;</font><br>
+<a href="http://ddrv.cn/a/89510">&#x8FDB;&#x7A0B;&#x7684;&#x4E94;&#x79CD;&#x72B6;&#x6001;</a><br>
+<a href="https://blog.csdn.net/ddna/article/details/4941373"><u>&#x7528;&#x6237;&#x6001;&#x5207;&#x5230;&#x5185;&#x6838;&#x6001;</u></a><br>
+&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x3001;&#x5F02;&#x5E38;&#x3001;&#x5916;&#x56F4;&#x8BBE;&#x5907;&#x7684;&#x4E2D;&#x65AD;<br>
+<a href="https://blog.csdn.net/rrrfff/article/details/44993183">&#x5185;&#x5B58;&#x4F2A;&#x5171;&#x4EAB;</a><br>
+<a href="https://www.cnblogs.com/gdk-0078/p/5165242.html">&#x5171;&#x4EAB;&#x5185;&#x5B58;mmap&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</a><br>
+<a href="https://blog.csdn.net/jasonchen_gbd/article/details/79461385">Linux&#x5185;&#x5B58;&#x7BA1;&#x7406;</a><br>
+<a href="https://blog.csdn.net/LZUwujiajun/article/details/82781918">Linux&#x4E2D;&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x7ED3;&#x6784;</a><br>
+<a href="https://blog.csdn.net/qq_25406563/article/details/85011454">Cache &#x548C;&#x4E3B;&#x5B58;&#x7684;&#x6620;&#x5C04;&#x65B9;&#x6CD5;</a><br>
+<a href="https://blog.csdn.net/luansj/article/details/97272672"><u>Linux&#x5E38;&#x7528;&#x547D;&#x4EE4;</u></a><br>
+<font size="2">top(&#x67E5;&#x770B;CPU&#x3001;&#x5185;&#x5B58;&#x3001;&#x8FDB;&#x7A0B;&#x3001;&#x4EA4;&#x6362;&#x533A;&#x4FE1;&#x606F;) ps(&#x8FDB;&#x7A0B;&#x7B80;&#x51B5;) df(&#x78C1;&#x76D8;&#x5168;&#x90E8;) du(&#x78C1;&#x76D8;&#x6587;&#x4EF6;&#x5939;) netstat(&#x7AEF;&#x53E3;&#x53F7;) chmod(&#x8BFB;&#x5199;&#x6743;&#x9650;&#x8BBE;&#x7F6E;) more less ifconfig(&#x67E5;&#x770B;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;) pwd(&#x663E;&#x793A;&#x5DE5;&#x4F5C;&#x8DEF;&#x5F84;)</font><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="network"><strong>&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;</strong></span><br>
+<a href="https://blog.csdn.net/qq_22238021/article/details/80279001"><u>&#x5E94;&#x7528;&#x5C42;&#x3001;&#x8FD0;&#x8F93;&#x5C42;&#x3001;&#x7F51;&#x7EDC;&#x5C42;&#x3001;&#x6570;&#x636E;&#x94FE;&#x8DEF;&#x5C42;&#x548C;&#x7269;&#x7406;&#x5C42;</u></a><br>
+<font size="2">HTTP/FTP/DNS/SMTP&#x3001;TCP/UDP&#x3001;IP/ICMP</font><br>
+<a href="https://blog.csdn.net/qq_40783848/article/details/96153619">TCP&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x3001;&#x56DB;&#x6B21;&#x6325;&#x624B;</a><br>
+<a href="https://www.zhihu.com/question/24853633">&#x4E3A;&#x4EC0;&#x4E48;TCP&#x63E1;&#x4E09;&#x6B21;</a><br>
+<a href="https://blog.csdn.net/qq_25948717/article/details/80382766"><u>TCP&#x5934;&#x90E8;&#x5185;&#x5BB9;</u></a><br>
+&#x6E90;&#x7AEF;&#x53E3;&#x53F7;&#x3001;&#x76EE;&#x6807;&#x7AEF;&#x53E3;&#x53F7;&#x3001;&#x5E8F;&#x5217;&#x53F7;&#x3001;&#x786E;&#x8BA4;&#x53F7;&#x3001;&#x5934;&#x90E8;&#x957F;&#x5EA6;&#x3001;&#x4FDD;&#x7559;&#x4F4D;&#x3001;tcp&#x6807;&#x5FD7;&#x4F4D;&#x3001;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x3001;&#x6821;&#x9A8C;&#x548C;&#x3001;&#x7D27;&#x6025;&#x6307;&#x9488;&#x3001;&#x53EF;&#x9009;&#x9879;<br>
+<a href="https://blog.csdn.net/didudidudu/article/details/80181505">&#x8F93;&#x5165;URL&#x5230;&#x663E;&#x793A;&#x7684;&#x8FC7;&#x7A0B;(DNS&#x89E3;&#x6790;&#x8FC7;&#x7A0B;)</a><br>
+<a href="https://www.cnblogs.com/hongdada/p/11171068.html">TCP&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#xFF08;&#x53D1;&#x9001;&#x7A97;&#x53E3;&#x548C;&#x63A5;&#x53D7;&#x7A97;&#x53E3;&#xFF09;</a><br>
+<a href="https://blog.csdn.net/gengzhikui1992/article/details/89141184">TCP&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x7B97;&#x6CD5;{0.2}</a><br>
+<a href="https://blog.csdn.net/twt936457991/article/details/90574284">TCP&#x6325;&#x624B;Time-Wait&#x8FC7;&#x591A;&#x7684;&#x539F;&#x56E0;&#x3001;&#x89E3;&#x51B3;&#x529E;&#x6CD5;</a><br>
+<a href="https://blog.csdn.net/rediculous/article/details/46005217"><u>TCP&#x5982;&#x4F55;&#x68C0;&#x6D4B;&#x5BA2;&#x6237;&#x7AEF;&#x662F;&#x5426;&#x65AD;&#x5F00;</u></a><br>
+<font size="2">Java:sendUrgentData&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x5B57;&#x8282;,&#x5173;&#x95ED;&#x72B6;&#x6001;&#x4E0B;SO_OOBINLINE&#x5C5E;&#x6027;&#x6CA1;&#x6709;&#x6253;&#x5F00;,&#x4F1A;&#x4EA7;&#x751F;&#x5F02;&#x5E38;&#x3002;AIO&#x76F4;&#x63A5;channel&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;</font><br>
+<a href="https://www.cnblogs.com/zhangmumu/p/9213871.html">http&#x534F;&#x8BAE;&#x62A5;&#x6587;&#x548C;&#x72B6;&#x6001;&#x7801;{0.2/0.6}</a><br>
+<a href="https://www.cnblogs.com/frankyou/p/6145485.html">HTTP 2.0&#x4E0E;HTTP 1.1&#x533A;&#x522B;</a><br>
+<a href="https://www.jianshu.com/p/3261a051a2fa">&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x548C;&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x5E38;&#x7528;&#x7B97;&#x6CD5;{0.4}</a><br>
+<a href="https://blog.csdn.net/weixin_41440282/article/details/81141609">&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x7684;&#x5B9E;&#x73B0;</a><br>
+<a href="https://segmentfault.com/a/1190000018129846">GET&#x548C;POST&#x533A;&#x522B;</a><br>
+<u>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5EFA;&#x7ACB;TCP&#x8FDE;&#x63A5;</u><br>
+<font size="2">&#x53EA;&#x6709;&#x7AEF;&#x5230;&#x7AEF;&#x8FDE;&#x63A5;&#x662F;&#x53EF;&#x9760;&#x6027;&#x8FDE;&#x63A5;&#xFF0C;&#x8FDE;&#x63A5;&#x76EE;&#x7684;&#x662F;&#x8BB0;&#x5F55;&#x4E24;&#x4E2A;&#x7AEF;&#x53E3;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x72B6;&#x6001;&#xFF0C;&#x5426;&#x5219;&#x4E22;&#x5305;&#x3001;&#x91CD;&#x590D;&#x4F20;&#x65E0;&#x4ECE;&#x77E5;&#x6653;</font><br>
+<a href="https://www.cnblogs.com/onefine/p/10499344.html">cookie&#x548C;session&#x673A;&#x5236;</a><br>
+<a href="https://www.cnblogs.com/imapla/archive/2013/03/12/2955931.html">&#x96C6;&#x7EBF;&#x5668;&#x3001;&#x4EA4;&#x6362;&#x673A;&#x3001;&#x8DEF;&#x7531;&#x5668;&#x3001;&#x7F51;&#x6865;&#x3001;&#x7F51;&#x5173;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;</a><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="cpp"><strong>C++</strong></span><br>
+<a href="https://www.cnblogs.com/inception6-lxc/p/8686156.html">C++&#x9762;&#x8BD5;&#x9898;&#x6C47;&#x603B;</a><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+<p><span id="others"><strong>&#x5176;&#x4ED6;</strong></span><br>
+<a href="https://www.cnblogs.com/nelsen-chen/p/9073004.html">Python&#x5B57;&#x5178;&#x5B9E;&#x73B0;&#x539F;&#x7406;</a><br>
+<a href="https://blog.csdn.net/bluehawksky/article/details/84315400">go&#x534F;&#x7A0B;&#x539F;&#x7406;</a><br>
+<a href="https://blog.csdn.net/weixin_38054045/article/details/104098139">go&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x673A;&#x5236;</a><br>
+<a href="https://baike.baidu.com/item/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/4035031">&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x597D;&#x5904;</a><br>
+<a href="https://www.zhihu.com/question/27544895">&#x56FE;&#x5F62;&#x5B66;&#x57FA;&#x7840;&#x77E5;&#x8BC6;</a><br>
+<a href="https://www.jianshu.com/p/f63622c1232e">&#x4EE3;&#x7801;&#x91CD;&#x6784;</a><br>
+<a href="#top">&#x8FD4; &#x56DE; &#x76EE; &#x5F55;&#x3000;&#x3000;&#x3000;&#x3000;Back to top</a></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
