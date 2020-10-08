@@ -1,0 +1,817 @@
+<!DOCTYPE html><html><head>
+      <title>Python&#x751F;&#x6210;&#x5668;&#x3001;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#x8BE6;&#x89E3;(3.7)</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\hp1\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.4.3\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p>Note from&#xFF1A;3.5&#x7248;&#x672C;&#x4EE5;&#x524D;<a href="https://snarky.ca/how-the-heck-does-async-await-work-in-python-3-5/">&#x6458;&#x81EA;</a>&#xFF0C;3.7&#x7248;&#x672C;&#x7684;asyncio<a href="https://realpython.com/async-io-python/">&#x6458;&#x81EA;</a></p>
+<h1 class="mume-header" id="yield22">yield(2.2+)</h1>
+
+<p>&#x751F;&#x6210;&#x5668;&#x4E2D;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;return&#x8BED;&#x53E5;(&#x53EA;&#x6709;&#x751F;&#x6210;&#x5668;&#x8FD9;&#x4E00;&#x79CD;&#x4E0D;&#x80FD;&#x5E26;return)&#xFF0C;&#x8981;&#x4F7F;&#x7528;<code>yield</code>&#x3002;<code>yield</code>&#x4EE3;&#x8868;&#x6267;&#x884C;&#x5230;&#x6B64;&#x5904;&#x6682;&#x505C;&#x3002;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7684;&#x662F;<code>next()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x4F1A;&#x8FD4;&#x56DE;<code>yield</code>&#x540E;&#x9762;&#x8FD9;&#x4E2A;index&#x53D8;&#x91CF;&#x3002;<br>
+&#x5F53;&#x518D;&#x6B21;&#x6267;&#x884C;<code>next()</code>&#x65F6;&#x4F1A;&#x7EE7;&#x7EED;&#x4ECE;&#x521A;&#x624D;&#x7684;&#x5730;&#x65B9;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x77E5;&#x9053;&#x78B0;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;<code>yield</code>&#x3002;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">lazy_range</span><span class="token punctuation">(</span>up_to<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Generator to return the sequence of integers from 0 to up_to, exclusive.&quot;&quot;&quot;</span>
+    index <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> index <span class="token operator">&lt;</span> up_to<span class="token punctuation">:</span>
+        <span class="token keyword">yield</span> index
+        index <span class="token operator">+=</span> <span class="token number">1</span>
+
+iterator <span class="token operator">=</span> lazy_range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># &#x867D;&#x8BF4;&#x662F;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;&#x8868;&#x73B0;&#x6765;&#x770B;&#x50CF;&#x662F;&#x8FED;&#x4EE3;&#x5668;</span>
+<span class="token comment"># &#x4F7F;&#x7528;foreach iterator&#x5E76;&#x8F93;&#x51FA;&#x7B49;&#x4EF7;&#x4E8E;&#x4E0B;&#x9762;</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">next</span><span class="token punctuation">(</span>iterator<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># &#x8F93;&#x51FA;0</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">next</span><span class="token punctuation">(</span>iterator<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># &#x8F93;&#x51FA;1</span>
+</pre><p>&#x4F7F;&#x7528;Python2.5&#x7248;&#x672C;&#x5F00;&#x59CB;&#x7684;<code>iterator.send(object)</code>&#x53EF;&#x4EE5;&#x5411;<code>yield</code>&#x5904;&#x53D1;&#x9001;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8D4B;&#x503C;&#x7ED9;<code>yield</code>&#x5DE6;&#x8FB9;&#x7684;&#x53D8;&#x91CF;jump&#xFF08;&#x5DE6;&#x8FDB;&#x53F3;&#x51FA;&#xFF09;&#x3002;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">jumping_range</span><span class="token punctuation">(</span>up_to<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Generator for the sequence of integers from 0 to up_to, exclusive.
+
+    Sending a value into the generator will shift the sequence by that amount.
+    &quot;&quot;&quot;</span>
+    index <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> index <span class="token operator">&lt;</span> up_to<span class="token punctuation">:</span>
+        jump <span class="token operator">=</span> <span class="token keyword">yield</span> index
+        <span class="token keyword">if</span> jump <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            jump <span class="token operator">=</span> <span class="token number">1</span>
+        index <span class="token operator">+=</span> jump
+
+iterator <span class="token operator">=</span> jumping_range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">next</span><span class="token punctuation">(</span>iterator<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 0</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>iterator<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">next</span><span class="token punctuation">(</span>iterator<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 3</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>iterator<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 2</span>
+<span class="token keyword">for</span> x <span class="token keyword">in</span> iterator<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>  <span class="token comment"># 3, 4</span>
+</pre><h1 class="mume-header" id="%E4%BB%8Eyield%E5%88%B0yield-from33">&#x4ECE;yield&#x5230;yield from(3.3+)</h1>
+
+<p><code>yield from iterator</code>&#x5176;&#x5B9E;&#x5C31;&#x7B49;&#x4EF7;&#x4E8E;<code>for x in iterator: yield x</code>&#xFF0C;&#x5185;&#x90E8;&#x8FD8;&#x4F1A;&#x81EA;&#x52A8;&#x5904;&#x7406;&#x4E00;&#x4E9B;&#x5F02;&#x5E38;&#x3002;&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x7684;lazy_range&#x4E3A;&#x4F8B;&#xFF0C;&#x5C06;<code>yield</code>&#x6539;&#x9020;&#x4E3A;<code>yield from</code>&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">lazy_range</span><span class="token punctuation">(</span>up_to<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Generator to return the sequence of integers from 0 to up_to, exclusive.&quot;&quot;&quot;</span>
+    index <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">def</span> <span class="token function">gratuitous_refactor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">nonlocal</span> index
+        <span class="token keyword">while</span> index <span class="token operator">&lt;</span> up_to<span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> index
+            index <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">yield</span> <span class="token keyword">from</span> gratuitous_refactor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre><p>&#x518D;&#x770B;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x4E00;&#x4E9B;&#x7684;&#x4F8B;&#x5B50;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">bottom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Returning the yield lets the value that goes up the call stack to come right back</span>
+    <span class="token comment"># down.</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">yield</span> <span class="token number">42</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">middle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">yield</span> <span class="token keyword">from</span> bottom<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">yield</span> <span class="token keyword">from</span> middle<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Get the generator.</span>
+gen <span class="token operator">=</span> top<span class="token punctuation">(</span><span class="token punctuation">)</span>
+value <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span>gen<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>  <span class="token comment"># Prints &apos;42&apos;.</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    value <span class="token operator">=</span> gen<span class="token punctuation">.</span>send<span class="token punctuation">(</span>value <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> StopIteration <span class="token keyword">as</span> exc<span class="token punctuation">:</span> <span class="token comment"># &#x8FD9;&#x91CC;&#x662F;&#x56E0;&#x4E3A;send&#x6267;&#x884C;&#x540E;&#x76F4;&#x63A5;return&#x4E86;&#xFF0C;&#x518D;&#x4E5F;&#x627E;&#x4E0D;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;yield&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x62A5;&#x9519;&#x3002;&#x800C;exc.value&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x6765;&#x7684;&#x4E1C;&#x897F;</span>
+    value <span class="token operator">=</span> exc<span class="token punctuation">.</span>value
+<span class="token keyword">print</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>  <span class="token comment"># Prints &apos;84&apos;.</span>
+</pre><h1 class="mume-header" id="%E4%BB%8Eyield-from%E5%88%B0await35">&#x4ECE;yield from&#x5230;await(3.5+)</h1>
+
+<h2 class="mume-header" id="%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E6%A6%82%E5%BF%B5">&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x7684;&#x6982;&#x5FF5;</h2>
+
+<p>&#x4E8B;&#x4EF6;&#x53EF;&#x4EE5;&#x662F;IO&#x3001;&#x9F20;&#x6807;&#x70B9;&#x51FB;&#x3001;&#x9875;&#x9762;&#x6EDA;&#x52A8;&#x7B49;&#xFF0C;&#x53EA;&#x8981;&#x5177;&#x6709;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3002;&#x5FAA;&#x73AF;&#x53EF;&#x7406;&#x89E3;&#x4E3A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x6BCF;&#x6B21;&#x6682;&#x505C;&#x90FD;&#x628A;&#x961F;&#x9996;&#x632A;&#x5165;&#x961F;&#x5C3E;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x3002;</p>
+<h2 class="mume-header" id="asynciocoroutine34">asyncio.coroutine(3.4+)</h2>
+
+<h3 class="mume-header" id="34%E7%89%88%E6%9C%AC%E5%86%99%E6%B3%95">3.4&#x7248;&#x672C;&#x5199;&#x6CD5;</h3>
+
+<p>&#x5012;&#x8BA1;&#x65F6;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> asyncio
+
+@asyncio<span class="token punctuation">.</span>coroutine
+<span class="token keyword">def</span> <span class="token function">countdown</span><span class="token punctuation">(</span>number<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> n <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;T-minus&apos;</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token string">&apos;({})&apos;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">yield</span> <span class="token keyword">from</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        n <span class="token operator">-=</span> <span class="token number">1</span>
+
+loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+tasks <span class="token operator">=</span> <span class="token punctuation">[</span>
+    asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>countdown<span class="token punctuation">(</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>countdown<span class="token punctuation">(</span><span class="token string">&quot;B&quot;</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+loop<span class="token punctuation">.</span>run_until_complete<span class="token punctuation">(</span>asyncio<span class="token punctuation">.</span>wait<span class="token punctuation">(</span>tasks<span class="token punctuation">)</span><span class="token punctuation">)</span>
+loop<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x8F93;&#x51FA;&#xFF1A;</span>
+<span class="token comment"># T-minus 2 (A)</span>
+<span class="token comment"># T-minus 3 (B)</span>
+<span class="token comment"># T-minus 1 (A)</span>
+<span class="token comment"># T-minus 2 (B)</span>
+<span class="token comment"># T-minus 1 (B)</span>
+</pre><p><code>asyncio.coroutine</code>&#x88C5;&#x9970;&#x5668;&#x7528;&#x4E8E;&#x6807;&#x8BB0;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x4F1A;&#x4F7F;&#x7528;<code>asyncio</code>&#x6A21;&#x5757;&#x4EE5;&#x53CA;&#x5176;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x3002;<br>
+&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;coroutine&#x7684;&#x5177;&#x4F53;&#x5B9A;&#x4E49;&#xFF08;&#x4E0E;&#x751F;&#x6210;&#x5668;&#x63D0;&#x4F9B;&#x7684;API&#x76F8;&#x5339;&#x914D;&#xFF09;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;<code>asyncio.Future</code>&#x5BF9;&#x8C61;&#x4E0A;&#x4F7F;&#x7528;<code>yield from</code>&#xFF0C;&#x5B83;&#x5C06;&#x5176;&#x4F20;&#x9012;&#x7ED9;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#xFF0C;&#x5728;&#x7B49;&#x5F85;&#x67D0;&#x4E8B;&#x53D1;&#x751F;&#x65F6;&#x6682;&#x505C;&#x6267;&#x884C;&#x534F;&#x7A0B;&#xFF08;<code>Future</code>&#x5BF9;&#x8C61;&#x662F;<code>asyncio</code>&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#xFF0C;&#x8FD9;&#x4E0D;&#x91CD;&#x8981;&#xFF09;&#x3002;&#x4E00;&#x65E6;<code>Future</code>&#x5BF9;&#x8C61;&#x5230;&#x8FBE;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#xFF0C;&#x5C31;&#x4F1A;&#x5728;&#x90A3;&#x91CC;&#x8FDB;&#x884C;&#x76D1;&#x89C6;&#xFF0C;&#x76F4;&#x5230;Future&#x5BF9;&#x8C61;&#x5B8C;&#x6210;&#x5B83;&#x9700;&#x8981;&#x505A;&#x7684;&#x4EFB;&#x4F55;&#x4E8B;&#x60C5;&#x3002;&#x4E00;&#x65E6;<code>Future</code>&#x5B8C;&#x6210;&#x5B83;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x6CE8;&#x610F;&#x5230;&#x5E76;&#x4E14;&#x6682;&#x505C;&#x7B49;&#x5F85;<code>Future</code>&#x7ED3;&#x679C;&#x7684;&#x534F;&#x7A0B;&#x518D;&#x6B21;&#x5F00;&#x59CB;&#xFF0C;&#x5176;&#x7ED3;&#x679C;&#x4F7F;&#x7528;&#x5176;<code>send()</code>&#x65B9;&#x6CD5;&#x53D1;&#x9001;&#x56DE;&#x534F;&#x7A0B;&#x3002;<br>
+<font size="1">&#x5C0F;&#x63D2;&#x66F2;&#xFF1A;&#x5728;3.4&#x7248;&#x672C;&#x8FD8;&#x63D0;&#x51FA;&#x4E86;asyncio.async()&#xFF0C;&#x7136;&#x800C;&#x5728;3.4.4&#x5C31;&#x88AB;&#x5F03;&#x7528;&#xFF0C;&#x88AB;asyncio.ensure_future()&#x4EE3;&#x66FF;</font></p>
+<h3 class="mume-header" id="35%E7%89%88%E6%9C%AC%E5%86%99%E6%B3%95">3.5&#x7248;&#x672C;&#x5199;&#x6CD5;</h3>
+
+<p>&#x5C06;<code>@asyncio.coroutine</code>&#x53D8;&#x6210;<code>async</code>&#xFF0C;&#x5C06;<code>yield from</code>&#x53D8;&#x6210;<code>await</code>&#xFF08;&#x8FD9;&#x79CD;&#x7528;&#x6CD5;&#x66F4;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x65B0;&#x7528;&#x6CD5;&#x662F;&#x539F;&#x751F;&#x534F;&#x7A0B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x57FA;&#x4E8E;&#x751F;&#x6210;&#x5668;&#x7684;&#x534F;&#x7A0B;&#xFF09;&#x3002;&#x6CE8;&#x610F;&#x4E0D;&#x6807;&#x6CE8;<code>async</code>&#x5C31;&#x4E0D;&#x80FD;&#x7528;<code>await</code>&#xFF01;(3.5&#x65B0;&#x589E;&#x7684;<code>types.coroutine</code>&#x4E3A;<code>asyncio.coroutine</code>&#x7684;&#x65B0;&#x540D;&#x79F0;&#xFF0C;&#x4F46;&#x4E8C;&#x8005;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x751F;&#x6210;&#x5668;&#x7684;&#x534F;&#x7A0B;<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine">&#x5DF2;&#x88AB;&#x5F03;&#x7528;</a>&#xFF0C;&#x5C06;&#x5728;3.10&#x7248;&#x672C;&#x4E2D;&#x79FB;&#x9664;)</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">countdown</span><span class="token punctuation">(</span>number<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> n <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;T-minus&apos;</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token string">&apos;({})&apos;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        n <span class="token operator">-=</span> <span class="token number">1</span>
+</pre><p><code>inspect.iscoroutine(obj)</code>&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;async&#x534F;&#x7A0B;&#x51FD;&#x6570;(3.5+)&#xFF1A;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x662F;&#x5426;&#x52A0;&#x4E86;<code>async</code><br>
+<code>inspect.isawaitable(obj)</code>&#x5224;&#x65AD;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;await&#x8868;&#x8FBE;&#x5F0F;&#xFF1A;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x662F;&#x5426;&#x52A0;&#x4E86;<code>@types.coroutine</code>&#x6216;&#x8005;<code>async</code></p>
+<h1 class="mume-header" id="asyncio%E6%A8%A1%E5%9D%97%E6%9E%81%E8%AF%A6%E8%A7%A3%E7%BA%AF37%E5%BC%8F%E5%86%99%E6%B3%95">asyncio&#x6A21;&#x5757;&#x6781;&#x8BE6;&#x89E3;&#xFF08;&#x7EAF;3.7&#x5F0F;&#x5199;&#x6CD5;&#xFF09;</h1>
+
+<p><strong>&#x65B0;&#x7279;&#x6027;</strong>&#xFF1A;<br>
+<code>asyncio.run(coroutine())</code>&#xFF1A;<code>get_event_loop()</code> + <code>ensure_future()</code> + <code>run_until_complete()</code><br>
+<code>asyncio.create_task()</code>&#xFF1A;<code>asyncio.ensure_future()</code>&#x7684;<a href="https://stackoverflow.com/questions/36342899/asyncio-ensure-future-vs-baseeventloop-create-task-vs-simple-coroutine">&#x66F4;&#x9AD8;&#x7B49;&#x7EA7;</a>&#x51FD;&#x6570;<br>
+<code>asyncio.gather(*awaitable()</code>&#xFF1A;&#x540C;&#x65F6;&#x6267;&#x884C;&#x5404;&#x4E2A;awaitable&#x5BF9;&#x8C61;&#xFF0C;&#x4E0E;await&#x8FDE;&#x7528;<br>
+<code>async for</code>&#xFF1A;&#x5F02;&#x6B65;&#x751F;&#x6210;&#x5668;(3.6+)<br>
+&#x7B80;&#x5355;&#x8F93;&#x51FA;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment">#!/usr/bin/env python3</span>
+<span class="token comment"># countasync.py</span>
+
+<span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;One&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># &#x4E0D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;time.sleep,&#x56E0;&#x4E3A;&#x8FD9;&#x5FC5;&#x987B;&#x662F;&#x975E;&#x963B;&#x585E;&#x8C03;&#x7528;&#x800C;&#x4E0D;&#x662F;&#x963B;&#x585E;&#x8C03;&#x7528;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Two&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>gather<span class="token punctuation">(</span>count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span>
+    <span class="token keyword">import</span> time
+    s <span class="token operator">=</span> time<span class="token punctuation">.</span>perf_counter<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># &#x83B7;&#x5F97;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x79D2;</span>
+    asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    elapsed <span class="token operator">=</span> time<span class="token punctuation">.</span>perf_counter<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>__file__<span class="token punctuation">}</span></span><span class="token string"> executed in </span><span class="token interpolation"><span class="token punctuation">{</span>elapsed<span class="token punctuation">:</span><span class="token format-spec">0.2f</span><span class="token punctuation">}</span></span><span class="token string"> seconds.&quot;</span></span><span class="token punctuation">)</span>
+</pre><p>&#x4E00;&#x76F4;&#x8F93;&#x51FA;&#x968F;&#x673A;&#x6570;&#xFF0C;&#x590D;&#x6742;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment">#!/usr/bin/env python3</span>
+<span class="token comment"># rand.py</span>
+
+<span class="token keyword">import</span> asyncio
+<span class="token keyword">import</span> random
+
+<span class="token comment"># ANSI colors</span>
+c <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;\033[0m&quot;</span><span class="token punctuation">,</span>   <span class="token comment"># End of color</span>
+    <span class="token string">&quot;\033[36m&quot;</span><span class="token punctuation">,</span>  <span class="token comment"># Cyan</span>
+    <span class="token string">&quot;\033[91m&quot;</span><span class="token punctuation">,</span>  <span class="token comment"># Red</span>
+    <span class="token string">&quot;\033[35m&quot;</span><span class="token punctuation">,</span>  <span class="token comment"># Magenta</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">makerandom</span><span class="token punctuation">(</span>idx<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> threshold<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">[</span>idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string-interpolation"><span class="token string">f&quot;Initiated makerandom(</span><span class="token interpolation"><span class="token punctuation">{</span>idx<span class="token punctuation">}</span></span><span class="token string">).&quot;</span></span><span class="token punctuation">)</span>
+    i <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> threshold<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">[</span>idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string-interpolation"><span class="token string">f&quot;makerandom(</span><span class="token interpolation"><span class="token punctuation">{</span>idx<span class="token punctuation">}</span></span><span class="token string">) == </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string"> too low; retrying.&quot;</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        i <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">[</span>idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string-interpolation"><span class="token string">f&quot;---&gt; Finished: makerandom(</span><span class="token interpolation"><span class="token punctuation">{</span>idx<span class="token punctuation">}</span></span><span class="token string">) == </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span> <span class="token operator">+</span> c<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> i
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    res <span class="token operator">=</span> <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>gather<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span>makerandom<span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">10</span> <span class="token operator">-</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> res
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span>
+    random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">444</span><span class="token punctuation">)</span>
+    r1<span class="token punctuation">,</span> r2<span class="token punctuation">,</span> r3 <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;r1: </span><span class="token interpolation"><span class="token punctuation">{</span>r1<span class="token punctuation">}</span></span><span class="token string">, r2: </span><span class="token interpolation"><span class="token punctuation">{</span>r2<span class="token punctuation">}</span></span><span class="token string">, r3: </span><span class="token interpolation"><span class="token punctuation">{</span>r3<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+</pre><p>Asyncio&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF1A;&#x94FE;&#x63A5;&#x534F;&#x7A0B;<a href="https://realpython.com/async-io-python/">Chaining Coroutines</a>&#x3001;&#x4F7F;&#x7528;&#x961F;&#x5217;<a href="https://realpython.com/async-io-python/">Using a Queue</a></p>
+<p><strong>&#x4F7F;&#x7528;</strong><code>async for</code>:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">mygen</span><span class="token punctuation">(</span>u<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Yield powers of 2.&quot;&quot;&quot;</span>
+    i <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> i <span class="token operator">&lt;</span> u<span class="token punctuation">:</span>
+        <span class="token keyword">yield</span> <span class="token number">2</span> <span class="token operator">**</span> i
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># This does *not* introduce concurrent execution</span>
+    <span class="token comment"># It is meant to show syntax only</span>
+    g <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">async</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> mygen<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    f <span class="token operator">=</span> <span class="token punctuation">[</span>j <span class="token keyword">async</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> mygen<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span>j <span class="token operator">//</span> <span class="token number">3</span> <span class="token operator">%</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> g<span class="token punctuation">,</span> f
+
+g<span class="token punctuation">,</span> f <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>g<span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+</pre><p><strong>&#x65B0;&#x7279;&#x6027;</strong>&#xFF1A;<br>
+<code>asyncio.get_running_loop()</code>&#x8FD4;&#x56DE;&#x5F53;&#x524D;OS&#x7EBF;&#x7A0B;&#x4E2D;&#x7684;&#x8FD0;&#x884C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x3002;<br>
+&#x4F7F;&#x7528;<code>create_task()</code>&#x6765;&#x5B89;&#x6392;&#x534F;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;&#x6267;&#x884C;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> asyncio
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">coro</span><span class="token punctuation">(</span>seq<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token triple-quoted-string string">&quot;&quot;&quot;&apos;IO&apos; wait time is proportional to the max element.&quot;&quot;&quot;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token builtin">max</span><span class="token punctuation">(</span>seq<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">return</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">reversed</span><span class="token punctuation">(</span>seq<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token comment"># This is a bit redundant in the case of one task</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token comment"># We could use `await coro([3, 2, 1])` on its own</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     t <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>coro<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># Python 3.7+</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">await</span> t
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&apos;t: type </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token builtin">type</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">&apos;</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&apos;t done: </span><span class="token interpolation"><span class="token punctuation">{</span>t<span class="token punctuation">.</span>done<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">&apos;</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> t <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+t<span class="token punctuation">:</span> <span class="token builtin">type</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">&apos;_asyncio.Task&apos;</span><span class="token operator">&gt;</span>
+t done<span class="token punctuation">:</span> <span class="token boolean">True</span>
+</pre><h1 class="mume-header" id="%E6%97%B6%E9%97%B4%E8%BD%B4">&#x65F6;&#x95F4;&#x8F74;</h1>
+
+<ul>
+<li>
+<p>3.3: &#x8868;&#x8FBE;&#x5F0F;&#x7684;yield from&#x5141;&#x8BB8;&#x751F;&#x6210;&#x5668;&#x59D4;&#x6258;&#x3002;</p>
+</li>
+<li>
+<p>3.4: asyncio&#x662F;&#x5728;Python&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x5F15;&#x5165;&#x7684;&#xFF0C;&#x5177;&#x6709;&#x4E34;&#x65F6;API&#x72B6;&#x6001;&#x3002;</p>
+</li>
+<li>
+<p>3.5: async&#x548C;wait&#x6210;&#x4E3A;Python&#x8BED;&#x6CD5;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x548C;&#x7B49;&#x5F85;&#x534F;&#x7A0B;&#x3002;&#x5B83;&#x4EEC;&#x8FD8;&#x4E0D;&#x662F;&#x4FDD;&#x7559;&#x5173;&#x952E;&#x5B57;&#x3002;(&#x60A8;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x540D;&#x4E3A;async&#x3001;await&#x7684;&#x51FD;&#x6570;&#x548C;&#x53D8;&#x91CF;&#x3002;)</p>
+</li>
+<li>
+<p>3.6: &#x5F15;&#x5165;&#x4E86;&#x5F02;&#x6B65;&#x751F;&#x6210;&#x5668;&#x548C;&#x5F02;&#x6B65;&#x7406;&#x89E3;&#x3002;asyncio&#x7684;API&#x88AB;&#x58F0;&#x660E;&#x4E3A;&#x7A33;&#x5B9A;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E34;&#x65F6;&#x7684;&#x3002;</p>
+</li>
+<li>
+<p>3.7: async&#x548C;wait&#x53D8;&#x6210;&#x4E86;&#x4FDD;&#x7559;&#x5173;&#x952E;&#x5B57;&#x3002;(&#x5B83;&#x4EEC;&#x4E0D;&#x80FD;&#x7528;&#x4F5C;&#x6807;&#x8BC6;&#x7B26;&#x3002;)&#x5B83;&#x4EEC;&#x7528;&#x4E8E;&#x66FF;&#x6362;asyncio.coroutine()&#x88C5;&#x9970;&#x5668;&#x3002;&#x5728;asyncio&#x5305;&#x4E2D;&#x5F15;&#x5165;&#x4E86;asyncio.run()&#x548C;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x7279;&#x6027;&#x3002;</p>
+</li>
+</ul>
+<h1 class="mume-header" id="%E9%99%84%E5%BD%95">&#x9644;&#x5F55;&#xFF1A;</h1>
+
+<p><a href="https://docs.python.org/3/library/asyncio-eventloop.html#event-loop-implementations">EventLoop&#x7684;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x5B9E;&#x73B0;</a>(&#x7B2C;&#x4E8C;&#x7AE0;&#x4EC5;&#x9650;Windows)</p>
+<p><code>asyncio</code>&#x6A21;&#x5757;&#x51FD;&#x6570;&#x5927;&#x5168;&#xFF1A;<br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.run"><code>asyncio.run(coro, *, debug=False)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task"><code>asyncio.create_task(coro)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.sleep"><code>coroutine asyncio.sleep(delay, result=None, *, loop=None)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.gather"><code>awaitable asyncio.gather(*aws, loop=None, return_exceptions=False)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.shield"><code>awaitable asyncio.shield(aw, *, loop=None)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.wait_for"><code>coroutine asyncio.wait_for(aw, timeout, *, loop=None)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.wait"><code>coroutine asyncio.wait(aws, *, loop=None, timeout=None, return_when=ALL_COMPLETED)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.as_completed"><code>asyncio.as_completed(aws, *, loop=None, timeout=None)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.run_coroutine_threadsafe"><code>asyncio.run_coroutine_threadsafe(coro, loop)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.current_task"><code>asyncio.current_task(loop=None)</code></a><br>
+<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.all_tasks"><code>asyncio.all_tasks(loop=None)</code></a></p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># https://docs.python.org/3/library/asyncio-task.html#asyncio.Task</span>
+<span class="token keyword">class</span> <span class="token class-name">asyncio</span><span class="token punctuation">.</span>Task<span class="token punctuation">(</span>coro<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> loop<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    cancel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    cancelled<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    done<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    result<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    exception<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    add_done_callback<span class="token punctuation">(</span>callback<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> context<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+    remove_done_callback<span class="token punctuation">(</span>callback<span class="token punctuation">)</span>
+    get_stack<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">,</span> limit<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+    print_stack<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">,</span> limit<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+    <span class="token builtin">classmethod</span> all_tasks<span class="token punctuation">(</span>loop<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+    <span class="token builtin">classmethod</span> current_task<span class="token punctuation">(</span>loop<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+</pre><p><a href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.call_at">loop.call_at</a><br>
+<a href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.call_soon">loop.call_soon</a><br>
+<a href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.call_later">loop.call_later</a><br>
+<a href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.call_soon_threadsafe">loop.call_soon_threadsafe</a></p>
+<p><code>gather</code>&#x548C;<code>wait</code>&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#xFF1A;<br>
+1.gather&#x4EFB;&#x52A1;&#x65E0;&#x6CD5;&#x53D6;&#x6D88;&#x3002;<br>
+2.&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x5217;&#x8868;<br>
+3.&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x987A;&#x5E8F;&#x8F93;&#x51FA;&#x3002;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">num</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>n<span class="token operator">*</span><span class="token number">0.1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> n
+    <span class="token keyword">except</span> asyncio<span class="token punctuation">.</span>CancelledError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;&#x6570;&#x5B57;</span><span class="token interpolation"><span class="token punctuation">{</span>n<span class="token punctuation">}</span></span><span class="token string">&#x88AB;&#x53D6;&#x6D88;&quot;</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">raise</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tasks <span class="token operator">=</span> <span class="token punctuation">[</span>num<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    complete<span class="token punctuation">,</span> pending <span class="token operator">=</span> <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>wait<span class="token punctuation">(</span>tasks<span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> complete<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5F53;&#x524D;&#x6570;&#x5B57;&quot;</span><span class="token punctuation">,</span>i<span class="token punctuation">.</span>result<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> pending<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x53D6;&#x6D88;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> p <span class="token keyword">in</span> pending<span class="token punctuation">:</span>
+            p<span class="token punctuation">.</span>cancel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x5F53;&#x524D;&#x6570;&#x5B57; 1</span>
+<span class="token comment"># &#x5F53;&#x524D;&#x6570;&#x5B57; 2</span>
+<span class="token comment"># &#x5F53;&#x524D;&#x6570;&#x5B57; 0</span>
+<span class="token comment"># &#x5F53;&#x524D;&#x6570;&#x5B57; 4</span>
+<span class="token comment"># &#x5F53;&#x524D;&#x6570;&#x5B57; 3</span>
+<span class="token comment"># &#x53D6;&#x6D88;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;</span>
+<span class="token comment"># &#x6570;&#x5B57;5&#x88AB;&#x53D6;&#x6D88;</span>
+<span class="token comment"># &#x6570;&#x5B57;9&#x88AB;&#x53D6;&#x6D88;</span>
+<span class="token comment"># &#x6570;&#x5B57;6&#x88AB;&#x53D6;&#x6D88;</span>
+<span class="token comment"># &#x6570;&#x5B57;8&#x88AB;&#x53D6;&#x6D88;</span>
+<span class="token comment"># &#x6570;&#x5B57;7&#x88AB;&#x53D6;&#x6D88;</span>
+</pre><p>gather&#x901A;&#x5E38;&#x88AB;&#x7528;&#x6765;&#x9636;&#x6BB5;&#x6027;&#x7684;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x3002;gather&#x4F1A;&#x7B49;&#x5F85;&#x6700;&#x8017;&#x65F6;&#x7684;&#x90A3;&#x4E2A;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x624D;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;&#x8017;&#x65F6;&#x603B;&#x65F6;&#x95F4;&#x53D6;&#x51B3;&#x4E8E;&#x5176;&#x4E2D;&#x4EFB;&#x52A1;&#x6700;&#x957F;&#x65F6;&#x95F4;&#x7684;&#x90A3;&#x4E2A;&#x3002;</p>
+<p>&#x5FAA;&#x73AF;&#x5012;&#x8BA1;&#x65F6;&#x7A0B;&#x5E8F;(3.5):</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> datetime
+<span class="token keyword">import</span> heapq
+<span class="token keyword">import</span> types
+<span class="token keyword">import</span> time
+
+
+<span class="token keyword">class</span> <span class="token class-name">Task</span><span class="token punctuation">:</span>
+
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Represent how long a coroutine should wait before starting again.
+
+    Comparison operators are implemented for use by heapq. Two-item
+    tuples unfortunately don&apos;t work because when the datetime.datetime
+    instances are equal, comparison falls to the coroutine and they don&apos;t
+    implement comparison methods, triggering an exception.
+    
+    Think of this as being like asyncio.Task/curio.Task.
+    &quot;&quot;&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> wait_until<span class="token punctuation">,</span> coro<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>coro <span class="token operator">=</span> coro
+        self<span class="token punctuation">.</span>waiting_until <span class="token operator">=</span> wait_until
+
+    <span class="token keyword">def</span> <span class="token function">__eq__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> other<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>waiting_until <span class="token operator">==</span> other<span class="token punctuation">.</span>waiting_until
+
+    <span class="token keyword">def</span> <span class="token function">__lt__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> other<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>waiting_until <span class="token operator">&lt;</span> other<span class="token punctuation">.</span>waiting_until
+
+
+<span class="token keyword">class</span> <span class="token class-name">SleepingLoop</span><span class="token punctuation">:</span>
+
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;An event loop focused on delaying execution of coroutines.
+
+    Think of this as being like asyncio.BaseEventLoop/curio.Kernel.
+    &quot;&quot;&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>coros<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_new <span class="token operator">=</span> coros
+        self<span class="token punctuation">.</span>_waiting <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">run_until_complete</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># Start all the coroutines.</span>
+        <span class="token keyword">for</span> coro <span class="token keyword">in</span> self<span class="token punctuation">.</span>_new<span class="token punctuation">:</span>
+            wait_for <span class="token operator">=</span> coro<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+            heapq<span class="token punctuation">.</span>heappush<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_waiting<span class="token punctuation">,</span> Task<span class="token punctuation">(</span>wait_for<span class="token punctuation">,</span> coro<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment"># Keep running until there is no more work to do.</span>
+        <span class="token keyword">while</span> self<span class="token punctuation">.</span>_waiting<span class="token punctuation">:</span>
+            now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token comment"># Get the coroutine with the soonest resumption time.</span>
+            task <span class="token operator">=</span> heapq<span class="token punctuation">.</span>heappop<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_waiting<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> now <span class="token operator">&lt;</span> task<span class="token punctuation">.</span>waiting_until<span class="token punctuation">:</span>
+                <span class="token comment"># We&apos;re ahead of schedule; wait until it&apos;s time to resume.</span>
+                delta <span class="token operator">=</span> task<span class="token punctuation">.</span>waiting_until <span class="token operator">-</span> now
+                time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>delta<span class="token punctuation">.</span>total_seconds<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">try</span><span class="token punctuation">:</span>
+                <span class="token comment"># It&apos;s time to resume the coroutine.</span>
+                wait_until <span class="token operator">=</span> task<span class="token punctuation">.</span>coro<span class="token punctuation">.</span>send<span class="token punctuation">(</span>now<span class="token punctuation">)</span>
+                heapq<span class="token punctuation">.</span>heappush<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_waiting<span class="token punctuation">,</span> Task<span class="token punctuation">(</span>wait_until<span class="token punctuation">,</span> task<span class="token punctuation">.</span>coro<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">except</span> StopIteration<span class="token punctuation">:</span>
+                <span class="token comment"># The coroutine is done.</span>
+                <span class="token keyword">pass</span>
+
+
+@types<span class="token punctuation">.</span>coroutine
+<span class="token keyword">def</span> <span class="token function">sleep</span><span class="token punctuation">(</span>seconds<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Pause a coroutine for the specified number of seconds.
+
+    Think of this as being like asyncio.sleep()/curio.sleep().
+    &quot;&quot;&quot;</span>
+    now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    wait_until <span class="token operator">=</span> now <span class="token operator">+</span> datetime<span class="token punctuation">.</span>timedelta<span class="token punctuation">(</span>seconds<span class="token operator">=</span>seconds<span class="token punctuation">)</span>
+    <span class="token comment"># Make all coroutines on the call stack pause; the need to use `yield`</span>
+    <span class="token comment"># necessitates this be generator-based and not an async-based coroutine.</span>
+    actual <span class="token operator">=</span> <span class="token keyword">yield</span> wait_until
+    <span class="token comment"># Resume the execution stack, sending back how long we actually waited.</span>
+    <span class="token keyword">return</span> actual <span class="token operator">-</span> now
+
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">countdown</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> length<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> delay<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Countdown a launch for `length` seconds, waiting `delay` seconds.
+
+    This is what a user would typically write.
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> <span class="token string">&apos;waiting&apos;</span><span class="token punctuation">,</span> delay<span class="token punctuation">,</span> <span class="token string">&apos;seconds before starting countdown&apos;</span><span class="token punctuation">)</span>
+    delta <span class="token operator">=</span> <span class="token keyword">await</span> sleep<span class="token punctuation">(</span>delay<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> <span class="token string">&apos;starting after waiting&apos;</span><span class="token punctuation">,</span> delta<span class="token punctuation">)</span>
+    <span class="token keyword">while</span> length<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> <span class="token string">&apos;T-minus&apos;</span><span class="token punctuation">,</span> length<span class="token punctuation">)</span>
+        waited <span class="token operator">=</span> <span class="token keyword">await</span> sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        length <span class="token operator">-=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> <span class="token string">&apos;lift-off!&apos;</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Start the event loop, counting down 3 separate launches.
+
+    This is what a user would typically write.
+    &quot;&quot;&quot;</span>
+    loop <span class="token operator">=</span> SleepingLoop<span class="token punctuation">(</span>countdown<span class="token punctuation">(</span><span class="token string">&apos;A&apos;</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> countdown<span class="token punctuation">(</span><span class="token string">&apos;B&apos;</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> delay<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        countdown<span class="token punctuation">(</span><span class="token string">&apos;C&apos;</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> delay<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    start <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    loop<span class="token punctuation">.</span>run_until_complete<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;Total elapsed time is&apos;</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre><p>&#x57FA;&#x4E8E;Asyncio&#x534F;&#x7A0B;&#x7684;&#x9AD8;&#x5E76;&#x53D1;&#x722C;&#x866B;(3.5):</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> re
+<span class="token keyword">import</span> asyncio
+<span class="token keyword">import</span> aiohttp
+<span class="token keyword">import</span> aiomysql
+<span class="token keyword">from</span> pyquery <span class="token keyword">import</span> PyQuery
+
+<span class="token comment"># https://www.lfd.uci.edu/</span>
+
+
+stop_flag <span class="token operator">=</span> <span class="token boolean">False</span>
+start_url <span class="token operator">=</span> <span class="token string">&quot;http://www.jobbole.com/&quot;</span>
+waitting_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+seen_urls <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+sem <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>Semaphore<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">fetch</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> session<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    &#x53D1;&#x9001;http&#x8BF7;&#x6C42;
+    :param url:
+    :return:
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">async</span> <span class="token keyword">with</span> sem<span class="token punctuation">:</span>                 <span class="token comment"># &#x5E76;&#x53D1;&#x5EA6;&#x63A7;&#x5236;</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>      <span class="token comment"># &#x722C;&#x53D6;&#x901F;&#x5EA6;&#x63A7;&#x5236;</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token keyword">async</span> <span class="token keyword">with</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span> <span class="token keyword">as</span> resp<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;url statis: {0}&apos;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> resp<span class="token punctuation">.</span>status <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">201</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    data <span class="token operator">=</span> <span class="token keyword">await</span> resp<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token keyword">return</span> data
+        <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">extract_urls</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    &#x4ECE;&#x8BF7;&#x6C42;&#x9875;&#x9762;&#x4E2D;&#x83B7;&#x53D6;&#x4E0B;&#x6B21;&#x8981;&#x8BF7;&#x6C42;url
+    :param html:
+    :return:
+    &quot;&quot;&quot;</span>
+    urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    pq <span class="token operator">=</span> PyQuery<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> link <span class="token keyword">in</span> pq<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> link<span class="token punctuation">.</span>attr<span class="token punctuation">(</span><span class="token string">&apos;href&apos;</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> url <span class="token keyword">and</span> url<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">&apos;http&apos;</span><span class="token punctuation">)</span> <span class="token keyword">and</span> url <span class="token keyword">not</span> <span class="token keyword">in</span> seen_urls<span class="token punctuation">:</span>
+            urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+            waitting_urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> urls
+
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">article_handler</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> session<span class="token punctuation">,</span> pool<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    &#x83B7;&#x53D6;&#x6587;&#x7AE0;&#x8BE6;&#x60C5;&#x5E76;&#x89E3;&#x6790;&#x5165;&#x5E93;
+    :param url:
+    :param session:
+    :return:
+    &quot;&quot;&quot;</span>
+    html <span class="token operator">=</span> <span class="token keyword">await</span> fetch<span class="token punctuation">(</span>url<span class="token punctuation">,</span> session<span class="token punctuation">)</span>
+    seen_urls<span class="token punctuation">.</span>add<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    extract_urls<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+    pq <span class="token operator">=</span> PyQuery<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+    title <span class="token operator">=</span> pq<span class="token punctuation">(</span><span class="token string">&apos;title&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># &#x7701;&#x7565;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span>
+    <span class="token keyword">async</span> <span class="token keyword">with</span> pool<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> conn<span class="token punctuation">:</span>
+        <span class="token keyword">async</span> <span class="token keyword">with</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> cur<span class="token punctuation">:</span>
+            <span class="token keyword">await</span> cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">&quot;sql&quot;</span><span class="token punctuation">)</span>
+            insert_sql <span class="token operator">=</span> <span class="token triple-quoted-string string">&quot;&quot;&quot;
+                INSERT INTO xxx
+            &quot;&quot;&quot;</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>description<span class="token punctuation">)</span>
+            <span class="token keyword">await</span> cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>insert_sql<span class="token punctuation">)</span>
+
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">init_urls</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> session<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    &#x89E3;&#x6790;&#x9875;&#x9762;&#xFF0C;
+    :param url:
+    :param session:
+    :return:
+    &quot;&quot;&quot;</span>
+
+    html <span class="token operator">=</span> <span class="token keyword">await</span> fetch<span class="token punctuation">(</span>url<span class="token punctuation">,</span> session<span class="token punctuation">)</span>
+    seen_urls<span class="token punctuation">.</span>add<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    extract_urls<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">consumer</span><span class="token punctuation">(</span>pool<span class="token punctuation">,</span> session<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># async with aiohttp.ClientSession() as session:      # &#x53D1;&#x9001;http&#x8BF7;&#x6C42;&#x9700;&#x8981;&#x7684;session</span>
+    <span class="token keyword">while</span> <span class="token keyword">not</span> stop_flag<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>waitting_urls<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+            <span class="token keyword">continue</span>
+        url <span class="token operator">=</span> waitting_urls<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;start get url: &apos;</span> <span class="token operator">+</span> url<span class="token punctuation">)</span>
+
+        <span class="token comment"># &#x8BE6;&#x60C5;&#x9875;&#x534F;&#x7A0B;&#xFF0C;&#x89E3;&#x6790;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x3001;&#x5165;&#x5E93;</span>
+        <span class="token keyword">if</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">&apos;http://.*?jobbole.com/\d+/&apos;</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> url <span class="token keyword">not</span> <span class="token keyword">in</span> seen_urls<span class="token punctuation">:</span>
+                asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>article_handler<span class="token punctuation">(</span>url<span class="token punctuation">,</span> session<span class="token punctuation">,</span> pool<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># &#x975E;&#x8BE6;&#x60C5;&#x9875;&#x534F;&#x7A0B;&#xFF0C;&#x8FDB;&#x4E00;&#x6B65;&#x63D0;&#x53D6;&#x51FA;&#x8BE6;&#x60C5;&#x9875;&#x7684;url</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> url <span class="token keyword">not</span> <span class="token keyword">in</span> seen_urls<span class="token punctuation">:</span>
+                asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>init_urls<span class="token punctuation">(</span>url<span class="token punctuation">,</span> session<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span>loop<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># &#x7B49;&#x5F85;Mysql&#x8FDE;&#x63A5;&#x6C60;&#x5EFA;&#x7ACB;</span>
+    pool <span class="token operator">=</span> <span class="token keyword">await</span> aiomysql<span class="token punctuation">.</span>create_pool<span class="token punctuation">(</span>
+        host<span class="token operator">=</span><span class="token string">&apos;&apos;</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token string">&apos;&apos;</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">&apos;&apos;</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">&apos;&apos;</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">&apos;mysql&apos;</span><span class="token punctuation">,</span> loop<span class="token operator">=</span>loop<span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">&apos;utf8&apos;</span><span class="token punctuation">,</span> autocommit<span class="token operator">=</span><span class="token boolean">True</span>
+    <span class="token punctuation">)</span>
+    <span class="token keyword">async</span> <span class="token keyword">with</span> aiohttp<span class="token punctuation">.</span>ClientSession<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> session<span class="token punctuation">:</span>      <span class="token comment"># &#x53D1;&#x9001;http&#x8BF7;&#x6C42;&#x9700;&#x8981;&#x7684;session</span>
+        html <span class="token operator">=</span> <span class="token keyword">await</span> fetch<span class="token punctuation">(</span>start_url<span class="token punctuation">,</span> session<span class="token punctuation">)</span>
+        seen_urls<span class="token punctuation">.</span>add<span class="token punctuation">(</span>start_url<span class="token punctuation">)</span>
+        extract_urls<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+
+        <span class="token comment"># consumer&#x534F;&#x7A0B;&#x4ECE;url&#x83B7;&#x53D6;&#xFF0C;&#x52A8;&#x6001;&#x5411;asyncio&#x63D0;&#x4EA4;article_handler&#x548C;init_urls&#x534F;&#x7A0B;</span>
+        asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>consumer<span class="token punctuation">(</span>pool<span class="token punctuation">,</span> session<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>main<span class="token punctuation">(</span>loop<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    loop<span class="token punctuation">.</span>run_forever<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

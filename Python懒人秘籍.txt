@@ -1,0 +1,55 @@
+对于可接受collection或者迭代器的函数，用迭代器会更快
+
+defaultdict(factory) 默认列表
+collection.Counter 生成计数器
+collection.deque 双向队列
+heapq 堆，全是静态函数
+queue.PriorityQueue 优先队列，堆的封装类
+functools.wraps 装饰器
+functools.reduce 用俩参数的function合并list前两个，合并到list只剩一个，返回结果
+bisect.bisect_left 二分查找，左临界index
+slice切片类
+itertools.islice对迭代器切片变成类似range函数，丢掉start前的所有元素
+numpy的二维切片变为c#的格式
+singledispatch 重载
+enumerate(iterable 遍历iterable时还带有index，返回格式：index，element
+zip(*its) 遍历多个迭代器，每次从每个里面取出一个形成元组并返回。如果发生StopIteration则停止
+
+itertools教程：
+itertools.count(start=0,step=None) 等价于stop=None的range
+itertools.cycle(str) 循环返回str的char
+itertools.repeat(a, times=None) 循环times次或者无限次a
+itertools.takewhile(funReturnsBool, collection) 返回第一个False之前的所有元素
+'''
+def takewhile(predicate, iterable):
+    # takewhile(lambda x: x<5, [1,4,6,4,1]) --> 1 4
+    for x in iterable:
+        if predicate(x):
+            yield x
+        else:
+            break
+'''
+itertools.dropwhile(funReturnsBool, collection) 返回第一个False的以及之后的所有元素
+'''
+def dropwhile(predicate, iterable):
+    # dropwhile(lambda x: x<5, [1,4,6,4,1]) --> 6 4 1
+    iterable = iter(iterable)
+    for x in iterable:
+        if not predicate(x):
+            yield x
+            break
+    for x in iterable:
+        yield x
+'''
+itertools.filterfalse 收集filter()抛弃的元素
+itertools.accumulate 累加器，求sum的简便方法
+itertools.chain(*iters) 把传入的迭代器首尾相连并返回
+itertools.product(*args) 多层循环遍历所有的结果元组 # 如('ab',[0,1])=>('a',0) ('a',1) ('b',0) ('b',1)。len(args)是几就有几层循环
+itertools.permutations(iterable, r) 返回可迭代元素内长度为r的排列元组。如果r==len(iterable)则为全排列
+itertools.combinations 返回长度为r的组合，同上
+itertools.combinations_with_replacement 同上，但是允许元组内出现重复的元素
+itertools.groupby(iterable, func) 根据key函数结果，将拥有相同函数结果的元素分到一个新的迭代器。每个新的循环器以函数返回结果为标签。返回格式：标签，迭代器（调用前需要提前sort）
+itertools.compress(data, selectors) 筛选器 return (d for d, s in zip(data, selectors) if s)
+map(func,parm1:list,parm2:list) 等价于itertools.starmap(func, zip(parm1,parm2))
+itertools.tee(iterator, n=2) 复制n个迭代器，形成迭代器并返回。这些迭代器相互独立
+itertools.zip_longest 与zip相似，但如果有迭代器StopIteration就用None代替它然后继续，直到全部为None
