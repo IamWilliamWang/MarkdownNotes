@@ -12,6 +12,7 @@
 [计算机网络](#network)
 [C++](#cpp)
 [其他](#others)
+<font size=2>(注：下划线代表下方是简答答案，{}括号表示进入链接后答案位置)</font>
 
 <span id="java">**Java、GC**</span>
 [Java GC过程、收集器](https://www.cnblogs.com/dmzna/archive/2020/05/18/12913458.html)
@@ -24,7 +25,8 @@
 <font size=2>ReentrantLock+Segment+HashEntry，synchronized+CAS+HashEntry+红黑树</font>
 [ConcurrentHashMap扩容原理{0.6}](https://www.cnblogs.com/lfs2640666960/p/9621461.html)
 [<u>Java反射的三种方式</u>](https://www.cnblogs.com/Zombie-Xian/p/6236072.html)
-<font size=2>obj.getClass、Object.class、Class.forName</font>
+<font size=2>obj.getClass、Object.class、Class.forName</font>[（类加载机制）](#jvmloader)
+[获取、修改反射后的类方法{0.5}](https://blog.csdn.net/weixin_42724467/article/details/84311385)
 [红黑树](https://blog.csdn.net/li1914309758/article/details/80997342)
 [<u>红黑树和AVL的区别{0.4}</u>](https://blog.csdn.net/21aspnet/article/details/88939297)
 根到叶子红黑2:1，AVL 1；红黑树插入和删除需要的旋转较少，AVL树查找更快
@@ -36,41 +38,56 @@
 [Java Socket简单例子](https://www.cnblogs.com/Cavalry-/p/11233862.html)
 [<u>Object类</u>](https://www.cnblogs.com/fnlingnzb-learner/p/7263947.html)
 clone equals finalize getClass hashCode notify notifyAll toString wait
-[<u>BlockingQueue</u>](https://www.cnblogs.com/200911/p/5994044.html)
+[<u>BlockingQueue</u>](https://blog.csdn.net/xiewenfeng520/article/details/106954169)
 [<u>字节流和字符流</u>](https://blog.csdn.net/chenkaibsw/article/details/81606722)
 <font size=2>字节流不使用缓冲区</font>
 [重载和重写](https://www.runoob.com/java/java-override-overload.html)
-[Class Loader](https://developer.ibm.com/zh/articles/j-lo-classloader/)
 [HashMap和HashSet区别{0.8}](https://blog.csdn.net/chen213wb/article/details/84647179)
 [HashMap负载因子为什么选择0.75](http://baijiahao.baidu.com/s?id=1656137152537394906)
+[<u>java.util.concurrent常用类</u>](https://blog.csdn.net/qq_35181209/article/details/75462995)
+<font size=2>CopyOnWriteArrayList、CopyOnWriteArraySet、ConcurrentHashMap、Executors、ThreadPoolExecutor、ReetrantLock、Semaphore、BlockingQueue</font>
 [<u>序列化ID的作用{0.6}</u>](https://blog.csdn.net/baidu_37107022/article/details/76860371)
 <font size=2>验证版本一致性</font>
 <u>lambda常用函数</u>
 <font size=2>map、filter、sorted、forEach、reduce、collect、max、min、count、toArray、findFirst</font>
+[final和finally](https://blog.csdn.net/qq_42651904/article/details/87708198)
+[LinkedHashMap实现原理](https://www.jianshu.com/p/8f4f58b4b8ab)
+[<u>CountDownLatch</u>](https://www.cnblogs.com/Lee_xy_z/p/10470181.html)
+<font size=2>能够使一个线程在等待另外一些线程完成各自工作之后，再继续执行，使用一个计数器进行实现。</font>
+[<u>JDK最新特性</u>](https://www.jianshu.com/p/84a6050c5391)
+<font size=2>本地变量类型推断、字符串/集合/Stream/Optional/InputStream加强、HTTP Client API、Files直接读写文件</font>
+[<u>创建对象的过程，分配内存的方法：指针碰撞法、空闲列表法</u>](https://my.oschina.net/u/2277632/blog/3045363)
+<font size=2>创建过程：类加载机制检查、分配内存、初始化零值、设置对象头、执行init。指针碰撞：同时申请多个对象，使得分界线指针来不及移动</font>
 [返 回 目 录　　　　Back to top](#top)
 
 <span id="jvm">**JVM、内存管理**</span>
 [<u>JVM内存模型/管理</u>](https://blog.csdn.net/zengxiantao1994/article/details/89303290)
 <font size=2>程序计数器，Java虚拟机栈，本地方法栈，Java堆，方法区</font>
-[Java的类加载机制](https://blog.csdn.net/cnahyz/article/details/82219210)
 [<u>各语言内存管理区别</u>](https://blog.csdn.net/qq_20081637/article/details/80875779)
 <font size=2>C：栈、堆、静态文字、常量、程序代码区</font>
 [-Xss -Xms -Xmx -Xmn 参数](https://blog.csdn.net/yrwan95/article/details/82826519)
 [JVM启动过程](https://www.cnblogs.com/DDiamondd/p/11298477.html)
+[<span id="jvmloader">类加载机制{0.5}</span>](https://blog.csdn.net/cnahyz/article/details/82219210)
 [<u>JVM常量池的内容，JAVA8变化</u>](https://www.cnblogs.com/tiancai/p/12674192.html)
 <font size=2>静态常量池、运行时常量池、字符串常量池、整型常量池。运行时常量池搬到了元空间，字符串常量池搬到了堆</font>
 [JVM内存泄漏/泄露场景](https://blog.csdn.net/smile_YangYue/article/details/80219001)
 <font size=2>集合类(对象hash值被改变)、各种连接不close、不合理的作用域(把局部变量作为类变量)</font>
 [JVM内存溢出OOM场景](https://www.cnblogs.com/yinbiao/p/10613585.html)
-[JVM常用命令、Jstat监控堆内外内存(Jconsole、JVisualVM)](https://www.cnblogs.com/zhi-leaf/p/10629033.html)
+[虚拟机栈的栈帧](https://blog.csdn.net/zq602316498/article/details/38926607)
+[JVM常用命令、jstat监控堆内外内存(Jconsole、JVisualVM)](https://www.cnblogs.com/zhi-leaf/p/10629033.html)
+[JVM内存泄漏监控命令jstack、jmap、jstat](https://www.liangzl.com/get-article-detail-31092.html)
+<font size=2>jstack:所有线程的运行情况和线程当前状态。jmap:jvm物理内存的占用情况(输出对象占用大小)</font>
 [返 回 目 录　　　　Back to top](#top)
 
 <span id="lock">**Java锁**</span>
-[Java并发锁、synchronized、CAS、AQS](https://www.cnblogs.com/cyrbjh/p/12404794.html)
+[<u>Java并发锁、synchronized、CAS、AQS{0.5}、Java对象头{0.2}</u>](https://www.cnblogs.com/cyrbjh/p/12404794.html)
+<font size=2>对象头：类型指针、标记字段(存哈希码，GC分代年龄，锁状态标志)，monitor中记录了锁的持有线程，等待的线程队列。AQS：保存01状态变量state和等待线程双向链表</font>
+[synchronized和lock的区别{0.4}](https://blog.csdn.net/hefenglian/article/details/82383569)
 [<font size=2>CAS保证原子性</font>](https://blog.csdn.net/weixin_45097458/article/details/103222246)
 [<font size=2>底层AQS实现原理(ReentrantLock){0.85}</font>](https://blog.csdn.net/qq_29373285/article/details/85164190)
 [Java锁升级过程](https://blog.csdn.net/sinat_29774479/article/details/86648801)
 [volatile的原则和应用场景{0.15}](https://blog.csdn.net/jinfeiteng2008/article/details/53423858)
+[volatile特性和实现原理](https://blog.51cto.com/wenshengzhu/2056138)
 [volatile禁用指令重排的目的{0.7}](https://blog.csdn.net/weixin_43982927/article/details/107969119)
 [返 回 目 录　　　　Back to top](#top)
 
@@ -81,6 +98,8 @@ clone equals finalize getClass hashCode notify notifyAll toString wait
 [<u>线程池的状态转换函数</u>](https://www.cnblogs.com/noino/p/11265000.html)
 <font size=2>Running、ShutDown（不接受）、Stop（打断所有）、Tidying（workCount==0）、Terminated（执行完terminated()）</font>
 [线程池的三大方法、七大参数、四种拒绝策略](https://blog.csdn.net/abcdf123456er/article/details/107819340)
+[<u>Executors弊端</u>](https://www.cnblogs.com/LoveBell/p/11979958.html)
+<font size=2>FixedThreadPool、SingleThreadPool:请求队列最大长度为MAX_VALUE导致OOM。CachedThreadPool、ScheduledThreadPool:允许的创建线程数量为MAX_VALUE导致OOM</font>
 [ThreadLocal线程局部存储](https://www.jianshu.com/p/6fc3bba12f38)
 [ThreadLocal内存泄漏/泄露](https://blog.csdn.net/puppylpg/article/details/80433271)
 [Java线程通信](https://blog.csdn.net/wlddhj/article/details/83793709)
@@ -105,10 +124,14 @@ clone equals finalize getClass hashCode notify notifyAll toString wait
 [SSM高频考点](https://www.jianshu.com/p/231a582d2a02/)
 [Spring和SpringBoot区别](https://www.jianshu.com/p/ffe5ebe17c3a)
 [SpringBoot高频考点](https://blog.csdn.net/weixin_45136046/article/details/90768687)
+[Spring懒加载原理](https://blog.csdn.net/afreon/article/details/108313972)
 [<u>常用web容器</u>](https://blog.csdn.net/yoyoxh/article/details/89210184)
 <font size=2>个人开发Tomcat/Nginx，大项目weblgoic/webshere</font>
 [<u>IOC、AOP简述</u>](https://blog.csdn.net/jaryle/article/details/52389672)
 <font size=2>控制反转(类的解耦)两种实现：[依赖查找和依赖注入](https://www.jianshu.com/p/17b66e6390fd)。面向切面的编程(更清晰的逻辑，可以让业务逻辑去关注自己本身的业务，而不去关注安全，事物，日志等活动)</font>
+[<u>MQ常用消息队列</u>](https://blog.csdn.net/hanchao5272/article/details/99974373)
+<font size=2>ActiveMQ、RabbitMQ、RocketMQ、Kafka。MQ用途：消息通讯、异步处理、应用解耦、流量削峰</font>
+[Kafka、RabbitMQ、RocketMQ消息中间件对比](https://www.cnblogs.com/felixzh/p/6198070.html)
 [Spring AOP](https://blog.csdn.net/sinat_21843047/article/details/80299366)
 [Spring IOC](https://www.jianshu.com/p/17b66e6390fd)
 [SSM与SSH的区别](https://www.jianshu.com/p/ae1b0287cd0a)
@@ -123,6 +146,8 @@ clone equals finalize getClass hashCode notify notifyAll toString wait
 <font size=2>原子性、一致性、隔离性和持久性</font>
 [<u>隔离级别</u>](https://www.cnblogs.com/jian-gao/p/10795407.html)
 <font size=2>读未提交、读提交、可重复读、可串行化；解决更新丢失，但会脏读。解决了脏读。解决了不可重复读，但会幻读。可串行化解决所有问题</font>
+[<u>mysql高并发优化</u>](https://blog.csdn.net/u011277123/article/details/90445580)
+<font size=2>优化SQL语句，优化数据库字段，加缓存，分区表，读写分离以及垂直拆分，解耦模块，水平切分</font>
 [<u>SQL优化方法</u>](https://www.cnblogs.com/xiangpeng/p/11032047.html)
 <font size=2>减少返回不必要的数据、减少物理和逻辑读次数、减少计算次数</font>
 [常见非关系型数据库](https://blog.csdn.net/qq_34116402/article/details/79578187)
@@ -130,12 +155,19 @@ clone equals finalize getClass hashCode notify notifyAll toString wait
 [范式](https://www.cnblogs.com/hum0ro/p/8877364.html)
 [*B+和B树的区别*](https://blog.csdn.net/mine_song/article/details/63251546)
 [*所有搜索树的区别、应用、复杂度*{0.8}](https://blog.csdn.net/u011109881/article/details/80344606)
+[常用数据库连接池](https://blog.csdn.net/weixin_33890526/article/details/85854256)
+[SQL语句中VARCHAR(20)和INT(20)的区别](https://blog.csdn.net/ZBylant/article/details/86572567)
+前者表示最多存放20个字符，后者表示最多显示20个字符
 [返 回 目 录　　　　Back to top](#top)
 
 <span id="mysql">**MySql**</span>
 [<u>Mysql表锁、行锁、优化方法</u>](https://www.cnblogs.com/itdragon/p/8194622.html)
 <font size=2>默认采用行锁，在未使用索引字段查询（或者全表扫描效率更高）时升级为表锁（如全表更新、多表级联）</font>
 [MyISAM 和 InnoDB 的区别](https://blog.csdn.net/chenkeqin_2012/article/details/53868311)
+[<u>mysql死锁和避免</u>](https://blog.csdn.net/AlbertFly/article/details/78493245)
+<font size=2>不同表相同记录行锁冲突、相同表记录行锁冲突、不同索引锁冲突、gap锁冲突</font>
+[<u>普通索引与唯一索引区别、change buffer的使用场景</u>](https://blog.csdn.net/qq_36918149/article/details/96704830)
+<font size=2>创建、查询、更新索引语句不同（主键索引和唯一索引语句PRIMARY、UNIQUE）</font>
 <u>联合索引</u>
 <font size=2>CREATE INDEX test2_mm_idx ON test2 (major, minor)</font>
 <u>mysql < > = LIKE是否索引失效</u>
@@ -145,6 +177,12 @@ clone equals finalize getClass hashCode notify notifyAll toString wait
 [redis+mysql缓存一致性{0.3}](https://zhuanlan.zhihu.com/p/58536781)
 <u>mysql可重复读是怎么实现的?讲一下innodb的实现方案</u>
 <font size=2>MVCC多版本并发控制</font>
+[<u>mysql的两阶段提交原理</u>](https://blog.csdn.net/jyf19/article/details/105636957)
+<font size=2>准备阶段:写入redo日志。commit阶段:写入binlog日志</font>
+[<u>mysql锁{0.4}</u>](https://zhuanlan.zhihu.com/p/88880235)
+<font size=2>行级锁、表级锁、页级锁(按锁粒度分类)。共享锁、排他锁、意向锁(按锁级别分类)</font>
+[<u>redo log,binlog,undo log区别{0.4}</u>](https://blog.csdn.net/u010002184/article/details/88526708)
+<font size=2>重做日志、归档日志</font>
 [<u>SQL注入的防范</u>](https://www.cnblogs.com/mthp/articles/10668547.html)
 <font size=2>把应用服务器的数据库权限降至最低；避免网站打印出SQL错误信息；对特殊字符进行转义处理；查询语句使用参数化的预编译语句</font>
 [左连接、右连接、内连接、全外连接的区别](https://blog.csdn.net/weixin_39220472/article/details/81193617)
@@ -152,6 +190,7 @@ clone equals finalize getClass hashCode notify notifyAll toString wait
 
 <span id="redis">**Redis**</span>
 [redis缓存击穿、穿透、雪崩](https://www.jianshu.com/p/b7f822935e28)
+[redis存储底层原理](https://www.cnblogs.com/ysocean/p/9080942.html)
 [redis一致性哈希{0.3}](https://www.jianshu.com/p/735a3d4789fc)
 [redis数据结构和场景](https://blog.csdn.net/freedomfanye/article/details/79543970)
 [redis的分布式锁，超时时间以及时间续约](https://blog.csdn.net/lzhcoder/article/details/88387751)
@@ -219,4 +258,5 @@ clone equals finalize getClass hashCode notify notifyAll toString wait
 [函数式编程的好处](https://baike.baidu.com/item/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/4035031)
 [图形学基础知识](https://www.zhihu.com/question/27544895)
 [代码重构](https://www.jianshu.com/p/f63622c1232e)
+[JNI优化](https://www.cnblogs.com/bulengjianghu/p/android_JNI_better.html)
 [返 回 目 录　　　　Back to top](#top)
